@@ -34,7 +34,8 @@
   .btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);}
   .mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:50px;}
   .mission-text p{color:var(--gray);line-height:1.9;font-size:.97rem;margin-bottom:16px;}
-  .mission-img{background:var(--blue-light);border-radius:20px;padding:40px;text-align:center;font-size:5rem;}
+  .mission-img{border-radius:20px;overflow:hidden;height:340px;}
+  .mission-img img{width:100%;height:100%;object-fit:cover;display:block;}
   .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px;}
   .value-card{background:var(--offwhite);border:1px solid rgba(26,63,168,0.08);border-radius:16px;padding:28px;transition:all .3s;}
   .value-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(26,63,168,0.1);border-color:rgba(26,63,168,0.2);}
@@ -67,7 +68,7 @@
 <nav>
   <a href="index.html" class="logo-nav">
     <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/logo.png" class="logo-img" alt="Logo"/>
-    <div class="logo-text">OBJECTIVE: CANCER<span>Prevention · Awareness · Support</span></div>
+    <div class="logo-text">OBJECTIVE: CANCER<span>Awareness · Education · Proactiveness</span></div>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -88,8 +89,8 @@
 
 <section>
   <div class="container">
-    <div class="section-tag">Our Mission</div>
-    <h2 class="section-title">Why We Exist</h2>
+    <div class="section-tag" style="text-align:center;">Our Mission</div>
+    <h2 class="section-title" style="text-align:center;">Why We Exist</h2>
     <div class="mission-grid">
       <div class="mission-text">
         <p>Objective: Cancer was founded on a simple but powerful belief: that knowledge saves lives. Too many people are affected by cancer every year, and too many of those cases could have been prevented or detected earlier with the right information.</p>
@@ -97,7 +98,9 @@
         <p>Our goal is to make cancer education accessible, engaging, and actionable for everyone, regardless of background or age.</p>
         <a href="donate.html" class="btn btn-primary" style="margin-top:10px;">Support Our Mission</a>
       </div>
-      <div class="mission-img">🎗️<br/><br/><strong style="font-size:1.2rem;color:var(--blue);font-family:'Segoe UI',sans-serif;">Knowledge Saves Lives</strong></div>
+      <div class="mission-img">
+        <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/post1.png" alt="Objective Cancer Donation Drive"/>
+      </div>
     </div>
   </div>
 </section>
@@ -119,8 +122,8 @@
 
 <section class="story-section">
   <div class="container">
-    <div class="section-tag">Our Story</div>
-    <h2 class="section-title">How We Got Here</h2>
+    <div class="section-tag" style="text-align:center;">Our Story</div>
+    <h2 class="section-title" style="text-align:center;">How We Got Here</h2>
     <div class="story-grid">
       <div class="story-text">
         <p>Objective: Cancer started as a small idea among students who wanted to make a difference. We saw how cancer touched the lives of people around us — family members, teachers, friends — and felt compelled to act.</p>
