@@ -66,7 +66,8 @@
   .chapters-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:800px;margin:50px auto 0;}
   .chapter-card{background:#fff;border:2px solid rgba(26,63,168,0.1);border-radius:20px;padding:36px;text-align:center;transition:all .3s;box-shadow:0 4px 16px rgba(26,63,168,0.06);}
   .chapter-card:hover{transform:translateY(-5px);border-color:var(--blue);box-shadow:0 14px 36px rgba(26,63,168,0.14);}
-  .chapter-icon{font-size:2.5rem;margin-bottom:16px;}
+  .chapter-logo-wrap{width:80px;height:80px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;}
+  .chapter-logo-wrap img{width:80px;height:80px;object-fit:contain;}
   .chapter-name{font-size:1.2rem;font-weight:900;color:var(--blue);margin-bottom:12px;}
   .chapter-desc{font-size:.9rem;color:var(--gray);line-height:1.7;margin-bottom:20px;}
   .chapter-link{display:inline-block;background:var(--blue-light);color:var(--blue);font-weight:700;font-size:.85rem;padding:10px 20px;border-radius:8px;text-decoration:none;transition:all .3s;}
@@ -184,17 +185,13 @@
     <p class="section-sub" style="text-align:center;margin:0 auto;">Objective: Cancer has chapters at schools across Boston — spreading awareness right in our communities.</p>
     <div class="chapters-grid">
       <div class="chapter-card">
-        <div style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
-          <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/bls-logo.png" style="max-width:90px;max-height:90px;object-fit:contain;"/>
-        </div>
+        <div class="chapter-logo-wrap"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/bls-logo.png" alt="BLS Logo"/></div>
         <div class="chapter-name">Boston Latin School</div>
         <div class="chapter-desc">Our BLS chapter works to educate students and the broader community about cancer awareness and early detection.</div>
         <a href="bls.html" class="chapter-link">Learn More →</a>
       </div>
       <div class="chapter-card">
-        <div style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
-          <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/bla-logo.png" style="max-width:90px;max-height:90px;object-fit:contain;"/>
-        </div>
+        <div class="chapter-logo-wrap"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/bla-logo.png" alt="BLA Logo"/></div>
         <div class="chapter-name">Boston Latin Academy</div>
         <div class="chapter-desc">Our BLA chapter is dedicated to promoting proactiveness and spreading cancer awareness throughout the BLA community.</div>
         <a href="bla.html" class="chapter-link">Learn More →</a>
