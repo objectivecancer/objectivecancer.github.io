@@ -37,18 +37,20 @@
   .mission-img{border-radius:20px;overflow:hidden;height:420px;box-shadow:0 20px 60px rgba(26,63,168,0.15);}
   .mission-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
   .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px;}
-  .value-card{background:var(--offwhite);border:1px solid rgba(26,63,168,0.08);border-radius:16px;padding:28px;transition:all .3s;}
+  .value-card{background:#fff;border:1px solid rgba(26,63,168,0.08);border-radius:16px;padding:28px;transition:all .3s;box-shadow:0 2px 10px rgba(26,63,168,0.04);}
   .value-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(26,63,168,0.1);border-color:rgba(26,63,168,0.2);}
   .value-icon{font-size:2rem;margin-bottom:14px;}
-  .value-title{font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:8px;}
-  .value-text{color:var(--gray);font-size:.88rem;line-height:1.7;}
-  .story-section{background:var(--offwhite);}
+  .value-title{font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:8px;font-family:'Segoe UI',sans-serif;}
+  .value-text{color:var(--gray);font-size:.88rem;line-height:1.7;font-family:'Segoe UI',sans-serif;}
+  .story-section{background:linear-gradient(135deg,var(--blue) 0%,var(--accent) 100%);}
+  .story-section .section-tag{color:rgba(255,255,255,0.7);}
+  .story-section .section-title{color:#fff;}
   .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:50px;}
-  .story-text p{color:var(--gray);line-height:1.9;font-size:.97rem;margin-bottom:16px;}
+  .story-text p{color:rgba(255,255,255,0.85);line-height:1.9;font-size:.97rem;margin-bottom:16px;}
   .story-stats{display:flex;flex-direction:column;gap:20px;}
-  .story-stat{background:#fff;border-radius:14px;padding:24px;border:1px solid rgba(26,63,168,0.08);box-shadow:0 2px 10px rgba(26,63,168,0.04);}
-  .story-stat-num{font-size:2rem;font-weight:900;color:var(--blue);}
-  .story-stat-label{color:var(--gray);font-size:.88rem;margin-top:4px;}
+  .story-stat{background:rgba(255,255,255,0.1);border-radius:14px;padding:24px;border:1px solid rgba(255,255,255,0.2);}
+  .story-stat-num{font-size:2rem;font-weight:900;color:#fff;}
+  .story-stat-label{color:rgba(255,255,255,0.7);font-size:.88rem;margin-top:4px;}
   .cta-banner{background:linear-gradient(135deg,var(--blue) 0%,var(--accent) 100%);padding:80px 20px;text-align:center;color:#fff;}
   .cta-banner h2{font-size:2rem;font-weight:900;margin-bottom:14px;}
   .cta-banner p{color:rgba(255,255,255,0.8);max-width:480px;margin:0 auto 32px;line-height:1.7;}
@@ -73,7 +75,9 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#posts">Posts</a></li>
     <li><a href="index.html#chapters">Chapters</a></li>
+    <li><a href="donate.html">Donate</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="donate.html" class="nav-cta">Donate Now</a></li>
   </ul>
