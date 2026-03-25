@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About — Objective: Cancer</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--blue:#1a3fa8;--blue-dark:#122d85;--blue-light:#e8eeff;--accent:#2f57d4;--white:#fff;--offwhite:#f5f7ff;--gray:#666;--text:#1a1a2e;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Segoe UI',sans-serif;background:var(--white);color:var(--text);}
+  nav{position:fixed;top:0;width:100%;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:12px 60px;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,63,168,0.08);box-shadow:0 2px 20px rgba(26,63,168,0.06);}
+  .logo-nav{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .logo-img{width:46px;height:46px;border-radius:50%;object-fit:cover;}
+  .logo-text{font-size:1rem;font-weight:900;color:var(--blue);line-height:1.2;}
+  .logo-text span{display:block;font-size:.65rem;letter-spacing:2px;color:var(--accent);font-weight:600;text-transform:uppercase;text-align:center;}
+  .nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
+  .nav-links a{color:var(--gray);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .3s;}
+  .nav-links a:hover{color:var(--blue);}
+  .nav-links a.active{color:var(--blue);font-weight:700;}
+  .nav-cta{background:var(--blue)!important;color:#fff!important;padding:9px 20px;border-radius:8px;font-weight:700!important;}
+  .nav-cta:hover{background:var(--blue-dark)!important;color:#fff!important;}
+  .page-hero{padding:140px 20px 80px;background:linear-gradient(155deg,#eef2ff 0%,#fff 60%,#e8f0ff 100%);text-align:center;}
+  .page-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:12px;}
+  .page-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--text);margin-bottom:16px;}
+  .page-sub{font-size:1.05rem;color:var(--gray);max-width:580px;margin:0 auto;line-height:1.8;}
+  section{padding:80px 20px;}
+  .container{max-width:1100px;margin:0 auto;}
+  .section-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:10px;}
+  .section-title{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;color:var(--text);margin-bottom:12px;}
+  .section-sub{color:var(--gray);font-size:.97rem;line-height:1.8;max-width:580px;}
+  .btn{padding:13px 28px;border-radius:10px;font-size:.92rem;font-weight:700;text-decoration:none;transition:all .3s;display:inline-block;}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 4px 18px rgba(26,63,168,0.28);}
+  .btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);}
+  .mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:50px;}
+  .mission-text p{color:var(--gray);line-height:1.9;font-size:.97rem;margin-bottom:16px;}
+  .mission-img{background:var(--blue-light);border-radius:20px;padding:40px;text-align:center;font-size:5rem;}
+  .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px;}
+  .value-card{background:var(--offwhite);border:1px solid rgba(26,63,168,0.08);border-radius:16px;padding:28px;transition:all .3s;}
+  .value-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(26,63,168,0.1);border-color:rgba(26,63,168,0.2);}
+  .value-icon{font-size:2rem;margin-bottom:14px;}
+  .value-title{font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:8px;}
+  .value-text{color:var(--gray);font-size:.88rem;line-height:1.7;}
+  .story-section{background:var(--offwhite);}
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:50px;}
+  .story-text p{color:var(--gray);line-height:1.9;font-size:.97rem;margin-bottom:16px;}
+  .story-stats{display:flex;flex-direction:column;gap:20px;}
+  .story-stat{background:#fff;border-radius:14px;padding:24px;border:1px solid rgba(26,63,168,0.08);box-shadow:0 2px 10px rgba(26,63,168,0.04);}
+  .story-stat-num{font-size:2rem;font-weight:900;color:var(--blue);}
+  .story-stat-label{color:var(--gray);font-size:.88rem;margin-top:4px;}
+  .cta-banner{background:linear-gradient(135deg,var(--blue) 0%,var(--accent) 100%);padding:80px 20px;text-align:center;color:#fff;}
+  .cta-banner h2{font-size:2rem;font-weight:900;margin-bottom:14px;}
+  .cta-banner p{color:rgba(255,255,255,0.8);max-width:480px;margin:0 auto 32px;line-height:1.7;}
+  .btn-white{background:#fff;color:var(--blue);padding:14px 40px;border-radius:10px;font-size:1rem;font-weight:800;text-decoration:none;display:inline-block;transition:all .3s;}
+  .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.2);}
+  footer{background:var(--text);color:rgba(255,255,255,0.45);text-align:center;padding:44px 20px;}
+  .footer-logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:14px;}
+  .footer-logo img{width:38px;height:38px;border-radius:50%;}
+  .footer-logo-text{font-size:1.2rem;font-weight:900;color:#fff;}
+  .footer-logo-text span{color:#7a9fff;}
+  footer p{font-size:.83rem;line-height:1.8;}
+  footer a{color:#7a9fff;text-decoration:none;}
+  @media(max-width:768px){nav{padding:12px 20px;}.nav-links{display:none;}.mission-grid,.story-grid,.values-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo-nav">
+    <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/logo.png" class="logo-img" alt="Logo"/>
+    <div class="logo-text">OBJECTIVE: CANCER<span>Awareness · Education · Proactiveness</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#posts">Posts</a></li>
+    <li><a href="index.html#chapters">Chapters</a></li>
+    <li><a href="donate.html">Donate</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="donate.html" class="nav-cta">Donate Now</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-tag">Who We Are</div>
+  <h1 class="page-title">About Objective: Cancer</h1>
+  <p class="page-sub">A student-led 501(c)3 nonprofit dedicated to raising awareness for cancer in all its forms and promoting proactiveness in early detection and prevention.</p>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-tag">Our Mission</div>
+    <h2 class="section-title">Why We Exist</h2>
+    <div class="mission-grid">
+      <div class="mission-text">
+        <p>Objective: Cancer was founded on a simple but powerful belief: that knowledge saves lives. Too many people are affected by cancer every year, and too many of those cases could have been prevented or detected earlier with the right information.</p>
+        <p>As a student-led organization, we bring a fresh, energetic perspective to cancer awareness. We meet people where they are — on social media, in schools, and in communities — and give them the tools they need to take control of their health.</p>
+        <p>Our goal is to make cancer education accessible, engaging, and actionable for everyone, regardless of background or age.</p>
+        <a href="donate.html" class="btn btn-primary" style="margin-top:10px;">Support Our Mission</a>
+      </div>
+      <div class="mission-img">🎗️<br/><br/><strong style="font-size:1.2rem;color:var(--blue);font-family:'Segoe UI',sans-serif;">Knowledge Saves Lives</strong></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--offwhite);">
+  <div class="container">
+    <div class="section-tag" style="text-align:center;">What We Stand For</div>
+    <h2 class="section-title" style="text-align:center;">Our Core Values</h2>
+    <div class="values-grid">
+      <div class="value-card"><div class="value-icon">💡</div><div class="value-title">Education First</div><div class="value-text">We believe that informed people make better health decisions. We prioritize clear, accessible, and accurate cancer education.</div></div>
+      <div class="value-card"><div class="value-icon">🎯</div><div class="value-title">Proactiveness</div><div class="value-text">We encourage early detection and prevention. Taking action before a crisis is always better than reacting after one.</div></div>
+      <div class="value-card"><div class="value-icon">🤝</div><div class="value-title">Community</div><div class="value-text">We are stronger together. We build communities of students, supporters, and survivors united by a common cause.</div></div>
+      <div class="value-card"><div class="value-icon">🔬</div><div class="value-title">Research-Backed</div><div class="value-text">Everything we share is grounded in science. We make sure our content is accurate, up-to-date, and trustworthy.</div></div>
+      <div class="value-card"><div class="value-icon">🌍</div><div class="value-title">Inclusivity</div><div class="value-text">Cancer affects everyone. Our awareness efforts are inclusive of all cancer types, backgrounds, and communities.</div></div>
+      <div class="value-card"><div class="value-icon">✨</div><div class="value-title">Student-Led</div><div class="value-text">We are powered by passionate students who believe young people can make a real difference in the fight against cancer.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="container">
+    <div class="section-tag">Our Story</div>
+    <h2 class="section-title">How We Got Here</h2>
+    <div class="story-grid">
+      <div class="story-text">
+        <p>Objective: Cancer started as a small idea among students who wanted to make a difference. We saw how cancer touched the lives of people around us — family members, teachers, friends — and felt compelled to act.</p>
+        <p>What started as a social media page quickly grew into a registered 501(c)3 nonprofit with chapters at Boston Latin School and Boston Latin Academy, an active outreach initiative, and a growing community of supporters.</p>
+        <p>We're just getting started. Our vision is to expand to more schools, reach more communities, and ultimately contribute to a world where cancer is caught earlier and prevented more often.</p>
+      </div>
+      <div class="story-stats">
+        <div class="story-stat"><div class="story-stat-num">2+</div><div class="story-stat-label">Active school chapters in Boston</div></div>
+        <div class="story-stat"><div class="story-stat-num">416+</div><div class="story-stat-label">Instagram followers and growing</div></div>
+        <div class="story-stat"><div class="story-stat-num">19+</div><div class="story-stat-label">Awareness posts published</div></div>
+        <div class="story-stat"><div class="story-stat-num">501(c)3</div><div class="story-stat-label">Registered nonprofit organization</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <h2>Want to Get Involved? 🎗️</h2>
+  <p>Whether you want to donate, start a chapter, or just spread the word — there's a place for you in our mission.</p>
+  <a href="contact.html" class="btn-white">Get in Touch</a>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/logo.png" alt="Logo"/>
+    <div class="footer-logo-text">OBJECTIVE<span>:</span>CANCER</div>
+  </div>
+  <p>A student-led 501(c)3 nonprofit raising awareness for cancer in all its forms.</p>
+  <p style="margin-top:8px;"><a href="https://www.instagram.com/objectivecancer" target="_blank">Instagram</a> · <a href="https://linktr.ee/objectivecancer" target="_blank">Linktree</a></p>
+  <p style="margin-top:14px;">© 2025 Objective: Cancer · All rights reserved</p>
+</footer>
+<script>
+  const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';}});},{threshold:0.08});
+  document.querySelectorAll('section,.cta-banner').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity .65s ease,transform .65s ease';obs.observe(el);});
+</script>
+</body>
+</html>
