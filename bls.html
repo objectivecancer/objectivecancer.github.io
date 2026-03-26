@@ -54,9 +54,8 @@
   .meeting-title{font-weight:800;font-size:1rem;margin-bottom:6px;}
   .meeting-detail{color:rgba(255,255,255,0.7);font-size:.9rem;}
   .photos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px;}
-  .photo-placeholder{background:var(--offwhite);border-radius:16px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--blue);border:2px dashed rgba(26,63,168,0.2);}
-  .photo-placeholder span{font-size:2rem;}
-  .photo-placeholder p{font-size:.82rem;color:var(--gray);}
+  .photo-placeholder{border-radius:16px;overflow:hidden;aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:var(--offwhite);border:2px dashed rgba(26,63,168,0.2);}
+  .photo-placeholder img{width:100%;height:100%;object-fit:cover;display:block;}
   .back-btn{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-weight:700;text-decoration:none;font-size:.9rem;margin-bottom:30px;}
   .back-btn:hover{text-decoration:underline;}
   footer{background:var(--text);color:rgba(255,255,255,0.45);text-align:center;padding:44px 20px;}
