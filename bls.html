@@ -79,7 +79,21 @@
   body.dark .photo-placeholder{background:#1a1a2e;border-color:rgba(255,255,255,0.06);}
   body.dark footer{background:#080810;}
   body.dark .dark-toggle{border-color:rgba(255,255,255,0.2);color:#aaa;}
-  @media(max-width:768px){nav{padding:12px 20px;}.nav-links{display:none;}.activities-grid,.photos-grid{grid-template-columns:1fr;}.hero-stats{gap:24px;}}
+  @media(max-width:768px){
+    nav{padding:12px 20px;}
+    .nav-links{display:none;}
+    .hero-inner{flex-direction:column;text-align:center;gap:24px;align-items:center;padding:100px 20px 60px;}
+    .hero-logo-wrap{width:140px;height:140px;}
+    .hero-content{text-align:center;}
+    .hero-stats{justify-content:center;gap:16px;}
+    .activities-grid,.photos-grid{grid-template-columns:1fr;}
+    .section-tag,.section-title,.section-sub{text-align:center;}
+    .back-btn{justify-content:center;}
+    .meeting-info{flex-direction:column;align-items:center;gap:16px;}
+    .container{padding:0 16px;}
+    section{padding:50px 16px;}
+    footer{padding:30px 16px;}
+  }
 </style>
 </head>
 <body>
