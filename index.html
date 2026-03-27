@@ -110,15 +110,33 @@
   body.dark .section-sub{color:#aaa;}
   body.dark .dark-toggle{border-color:rgba(255,255,255,0.2);color:#aaa;}
   body.dark footer{background:#080810;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--blue);border-radius:2px;transition:all .3s;}
+  .mobile-menu{display:none;position:fixed;top:70px;left:0;width:100%;background:#fff;border-bottom:1px solid rgba(26,63,168,0.1);box-shadow:0 8px 20px rgba(26,63,168,0.1);z-index:998;padding:20px;}
+  .mobile-menu.open{display:flex;flex-direction:column;gap:4px;}
+  .mobile-menu a,.mobile-menu button{padding:12px 16px;color:var(--gray);text-decoration:none;font-size:.95rem;font-weight:500;border-radius:8px;transition:all .3s;border:none;background:none;cursor:pointer;text-align:left;font-family:inherit;}
+  .mobile-menu a:hover{background:var(--blue-light);color:var(--blue);}
+  .mobile-menu .mob-cta{background:var(--blue);color:#fff!important;font-weight:700;text-align:center;border-radius:8px;padding:12px 16px;}
+  body.dark .mobile-menu{background:#111128;border-bottom-color:rgba(255,255,255,0.06);}
+  body.dark .mobile-menu a{color:#aaa;}
+  body.dark .mobile-menu a:hover{background:#1a1a2e;color:#e8eeff;}
   @media(max-width:768px){
     nav{padding:12px 20px;}
     .nav-links{display:none;}
-    #home{padding:100px 24px 60px;}
+    .hamburger{display:flex;}
+    #home{padding:100px 20px 60px;}
     .hero-inner{flex-direction:column;text-align:center;gap:36px;}
-    .hero-logo{width:180px;height:180px;}
+    .hero-logo{width:200px;height:200px;}
     .hero-btns{justify-content:center;}
-    .about-grid,.chapters-grid{grid-template-columns:1fr;}
+    .hero-content{max-width:100%;}
+    .about-grid{grid-template-columns:1fr;gap:30px;}
+    .chapters-grid{grid-template-columns:1fr;gap:20px;}
     .posts-grid{grid-template-columns:repeat(2,1fr);}
+    .stats-inner{gap:20px;}
+    .stat-num{font-size:1.6rem;}
+    .donate-banner{padding:50px 20px;}
+    .donate-banner h2{font-size:1.6rem;}
+    h1{font-size:2rem;}
   }
 </style>
 </head>
@@ -136,7 +154,18 @@
     <li><a href="donate.html" class="nav-cta">Donate Now</a></li>
     <li><button class="dark-toggle" onclick="toggleDark()">🌙 Dark</button></li>
   </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="index.html#chapters">Chapters</a>
+  <a href="contact.html">Contact</a>
+  <a href="donate.html" class="mob-cta">Donate Now</a>
+  <button onclick="toggleDark();toggleMenu();" style="color:var(--gray);font-size:.95rem;">🌙 Toggle Dark Mode</button>
+</div>
 
 <section id="home">
   <div class="hero-circle"></div>
@@ -242,15 +271,11 @@
   <p style="margin-top:14px;">© 2025 Objective: Cancer · All rights reserved</p>
 </footer>
 <script>
+  function toggleDark(){document.body.classList.toggle('dark');const btn=document.querySelector('.dark-toggle');btn.innerHTML=document.body.classList.contains('dark')?'☀️ Light':'🌙 Dark';localStorage.setItem('dark',document.body.classList.contains('dark'));}
+  if(localStorage.getItem('dark')==='true'){document.body.classList.add('dark');document.querySelector('.dark-toggle').innerHTML='☀️ Light';}
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
   const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';}});},{threshold:0.08});
   document.querySelectorAll('section,.stats-bar,.donate-banner').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity .65s ease,transform .65s ease';obs.observe(el);});
-  function toggleDark(){
-    document.body.classList.toggle('dark');
-    const btn=document.querySelector('.dark-toggle');
-    btn.innerHTML=document.body.classList.contains('dark')?'☀️ Light':'🌙 Dark';
-    localStorage.setItem('dark',document.body.classList.contains('dark'));
-  }
-  if(localStorage.getItem('dark')==='true'){document.body.classList.add('dark');document.querySelector('.dark-toggle').innerHTML='☀️ Light';}
 </script>
 </body>
 </html>
