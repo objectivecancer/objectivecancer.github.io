@@ -106,7 +106,16 @@
     <li><a href="donate.html" class="nav-cta">Donate Now</a></li>
     <li><button class="dark-toggle" onclick="toggleDark()">🌙 Dark</button></li>
   </ul>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="index.html#chapters">Chapters</a>
+  <a href="contact.html">Contact</a>
+  <a href="donate.html" class="mob-cta">Donate Now</a>
+  <button onclick="toggleDark();toggleMenu();">🌙 Toggle Dark Mode</button>
+</div>
 
 <div class="page-hero">
   <div class="page-tag">Get in Touch</div>
@@ -177,6 +186,7 @@
 <script>
   function toggleDark(){document.body.classList.toggle('dark');const btn=document.querySelector('.dark-toggle');btn.innerHTML=document.body.classList.contains('dark')?'☀️ Light':'🌙 Dark';localStorage.setItem('dark',document.body.classList.contains('dark'));}
   if(localStorage.getItem('dark')==='true'){document.body.classList.add('dark');document.querySelector('.dark-toggle').innerHTML='☀️ Light';}
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
   const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';}});},{threshold:0.08});
   document.querySelectorAll('section').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity .65s ease,transform .65s ease';obs.observe(el);});
 </script>
