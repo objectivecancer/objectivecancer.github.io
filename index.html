@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+.impact-bar{background:#fff;padding:60px 20px;border-bottom:1px solid rgba(26,63,168,0.06);}
+  .impact-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .impact-item{text-align:center;padding:30px 20px;background:var(--offwhite);border-radius:16px;border:1px solid rgba(26,63,168,0.08);transition:all .3s;}
+  .impact-item:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(26,63,168,0.1);border-color:var(--blue);}
+  .impact-num{font-size:2.4rem;font-weight:900;color:var(--blue);margin-bottom:6px;}
+  .impact-label{font-size:.88rem;color:var(--gray);line-height:1.5;}<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -221,6 +226,15 @@
     <span class="ticker-item"><span class="ticker-dot"></span>Tobacco use is the leading preventable cause of cancer</span>
     <span class="ticker-item"><span class="ticker-dot"></span>Regular screenings save thousands of lives each year</span>
     <span class="ticker-item"><span class="ticker-dot"></span>A healthy lifestyle can reduce cancer risk by up to 40%</span>
+  </div>
+</div>
+
+<div class="impact-bar">
+  <div class="impact-inner">
+    <div class="impact-item"><div class="impact-num">100+</div><div class="impact-label">Care packages donated to cancer patients</div></div>
+    <div class="impact-item"><div class="impact-num">2</div><div class="impact-label">Active school chapters in Boston</div></div>
+    <div class="impact-item"><div class="impact-num">400+</div><div class="impact-label">Instagram followers & growing</div></div>
+    <div class="impact-item"><div class="impact-num">501(c)3</div><div class="impact-label">Registered nonprofit organization</div></div>
   </div>
 </div>
 
