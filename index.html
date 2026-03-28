@@ -52,8 +52,8 @@
   .chapter-cta:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(47,87,212,0.7);}
   .chapter-cta:hover span{transform:translateX(4px);}
   @keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(47,87,212,0.5);}50%{box-shadow:0 4px 30px rgba(47,87,212,0.8);}}
-  .hero-logo{flex-shrink:0;width:380px;height:380px;border-radius:50%;box-shadow:0 20px 60px rgba(26,63,168,0.13);overflow:hidden;}
-  .hero-logo img{width:100%;height:100%;object-fit:cover;}
+  .hero-logo{flex-shrink:0;width:380px;height:380px;border-radius:50%;box-shadow:0 20px 60px rgba(26,63,168,0.13);overflow:hidden;background:#fff;}
+  .hero-logo img{width:100%;height:100%;object-fit:contain;padding:20px;}
 
   /* TICKER */
   .ticker-wrap{width:100%;background:var(--blue);padding:16px 0;overflow:hidden;}
@@ -61,13 +61,6 @@
   .ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 36px;font-size:.88rem;font-weight:600;color:#fff;letter-spacing:.3px;}
   .ticker-dot{width:6px;height:6px;background:rgba(255,255,255,0.4);border-radius:50%;flex-shrink:0;}
   @keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-
-  /* STATS */
-  .stats-bar{background:var(--offwhite);padding:44px 20px;border-bottom:1px solid rgba(26,63,168,0.06);}
-  .stats-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px;}
-  .stat-item{text-align:center;}
-  .stat-num{font-size:2.2rem;font-weight:900;color:var(--blue);}
-  .stat-label{font-size:.82rem;color:var(--gray);margin-top:4px;}
 
   /* SECTIONS */
   section{padding:90px 20px;}
@@ -228,15 +221,6 @@
     <span class="ticker-item"><span class="ticker-dot"></span>Tobacco use is the leading preventable cause of cancer</span>
     <span class="ticker-item"><span class="ticker-dot"></span>Regular screenings save thousands of lives each year</span>
     <span class="ticker-item"><span class="ticker-dot"></span>A healthy lifestyle can reduce cancer risk by up to 40%</span>
-  </div>
-</div>
-
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat-item"><div class="stat-num">1 in 2</div><div class="stat-label">Men will develop cancer</div></div>
-    <div class="stat-item"><div class="stat-num">1 in 3</div><div class="stat-label">Women will develop cancer</div></div>
-    <div class="stat-item"><div class="stat-num">20M+</div><div class="stat-label">New cases per year globally</div></div>
-    <div class="stat-item"><div class="stat-num">50%</div><div class="stat-label">Of cases are preventable</div></div>
   </div>
 </div>
 
