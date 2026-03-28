@@ -42,7 +42,11 @@
   .btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);}
   .btn-outline{background:transparent;color:var(--blue);border:2px solid var(--blue);}
   .btn-outline:hover{background:var(--blue-light);transform:translateY(-2px);}
-  .stats-bar{background:var(--blue);padding:44px 20px;}
+  .ticker-wrap{width:100%;background:var(--blue);padding:12px 0;overflow:hidden;}
+  .ticker{display:flex;white-space:nowrap;animation:scroll 25s linear infinite;}
+  .ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 32px;font-size:.85rem;font-weight:600;color:#fff;letter-spacing:.5px;}
+  .ticker-dot{width:6px;height:6px;background:rgba(255,255,255,0.4);border-radius:50%;flex-shrink:0;}
+  @keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
   .stats-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px;}
   .stat-item{text-align:center;}
   .stat-num{font-size:2.2rem;font-weight:900;color:#fff;}
@@ -200,6 +204,27 @@
     </div>
   </div>
 </section>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item"><span class="ticker-dot"></span>Cancer Prevention</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Early Detection Saves Lives</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Join Our Mission</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>100+ Care Packages Donated</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>2 School Chapters in Boston</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>400+ Followers & Growing</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Student-Led 501(c)3 Nonprofit</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Awareness · Education · Support</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Cancer Prevention</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Early Detection Saves Lives</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Join Our Mission</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>100+ Care Packages Donated</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>2 School Chapters in Boston</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>400+ Followers & Growing</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Student-Led 501(c)3 Nonprofit</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Awareness · Education · Support</span>
+  </div>
+</div>
 
 <div class="stats-bar">
   <div class="stats-inner">
