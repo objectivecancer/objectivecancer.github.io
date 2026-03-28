@@ -11,6 +11,8 @@
   :root{--blue:#1a3fa8;--blue-dark:#122d85;--blue-light:#e8eeff;--accent:#2f57d4;--white:#fff;--offwhite:#f5f7ff;--gray:#666;--text:#1a1a2e;}
   html{scroll-behavior:smooth;}
   body{font-family:'Segoe UI',sans-serif;background:var(--white);color:var(--text);}
+
+  /* NAV */
   nav{position:fixed;top:0;width:100%;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:12px 60px;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,63,168,0.08);box-shadow:0 2px 20px rgba(26,63,168,0.06);}
   .logo-nav{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
   .logo-img{width:46px;height:46px;border-radius:50%;object-fit:cover;}
@@ -29,6 +31,8 @@
   .mobile-menu .mob-cta{background:var(--blue);color:#fff!important;font-weight:700;text-align:center;border-radius:8px;padding:12px 16px;}
   body.dark .mobile-menu{background:#111128;}
   body.dark .mobile-menu a{color:#aaa;}
+
+  /* HERO */
   #home{height:100vh;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(155deg,#eef2ff 0%,#fff 50%,#e8f0ff 100%);position:relative;overflow:hidden;}
   .hero-inner{display:flex;align-items:center;justify-content:space-between;gap:60px;max-width:1100px;width:100%;margin:0 auto;padding:0 60px;}
   .hero-content{flex:1;}
@@ -49,11 +53,13 @@
   @keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(47,87,212,0.5);}50%{box-shadow:0 4px 30px rgba(47,87,212,0.8);}}
   .hero-logo{flex-shrink:0;width:380px;height:380px;border-radius:50%;overflow:hidden;}
   .hero-logo img{width:100%;height:100%;object-fit:contain;}
+
+  /* TICKER */
   .ticker-wrap{width:100%;background:var(--blue);padding:16px 0;overflow:hidden;}
   .ticker{display:flex;white-space:nowrap;animation:tickerscroll 35s linear infinite;}
   .ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 36px;font-size:.88rem;font-weight:600;color:#fff;letter-spacing:.3px;}
   .ticker-dot{width:6px;height:6px;background:rgba(255,255,255,0.4);border-radius:50%;flex-shrink:0;}
-  @keyframes tickerscroll{0%{transform:translateX(0);}100%{transform:translateX(-50%)}}
+  @keyframes tickerscroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
   /* IMPACT BAR */
   .impact-bar{width:100%;background:#bdd4f7;padding:60px 20px;}
@@ -64,6 +70,7 @@
   .impact-num{font-size:2.6rem;font-weight:900;color:#1a3fa8;margin-bottom:6px;}
   .impact-label{font-size:.85rem;color:#111111;line-height:1.5;font-weight:600;}
 
+  /* SECTIONS */
   section{padding:90px 20px;}
   .container{max-width:1100px;margin:0 auto;}
   .section-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:10px;}
@@ -106,6 +113,8 @@
   .footer-logo-text span{color:#7a9fff;}
   footer p{font-size:.83rem;line-height:1.8;}
   footer a{color:#7a9fff;text-decoration:none;}
+
+  /* DARK MODE */
   body.dark{background:#111128;color:#e8eeff;}
   body.dark nav{background:rgba(13,13,26,0.97)!important;border-bottom-color:rgba(255,255,255,0.06);}
   body.dark .logo-text{color:#7a9fff;}
@@ -129,15 +138,38 @@
   body.dark .section-title{color:#e8eeff;}
   body.dark .section-sub{color:#aaa;}
   body.dark footer{background:#080810;}
+
+  /* MOBILE */
   @media(max-width:768px){
-    nav{padding:12px 20px;}
+    nav{padding:10px 16px;}
+    .logo-img{width:62px;height:62px;}
+    .logo-text{font-size:.95rem;}
     .nav-links{display:none;}
     .hamburger{display:flex;}
-    #home{height:auto;min-height:100vh;}
-    .hero-inner{flex-direction:column;text-align:center;gap:36px;align-items:center;padding:100px 20px 40px;}
-    .hero-logo{width:220px;height:220px;}
+    #home{
+      height:100vh;
+      height:100dvh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:0;
+    }
+    .hero-inner{
+      flex-direction:column;
+      text-align:center;
+      align-items:center;
+      justify-content:center;
+      padding:80px 20px 20px;
+      gap:20px;
+      height:100%;
+    }
+    .hero-logo{width:160px;height:160px;}
     .hero-btns{justify-content:center;}
     .hero-content{display:flex;flex-direction:column;align-items:center;}
+    .hero-sub{font-size:.9rem;margin-bottom:20px;}
+    h1{font-size:clamp(1.7rem,7vw,2.4rem);margin-bottom:12px;}
+    .chapter-cta{font-size:.82rem;padding:11px 18px;margin-top:10px;}
+    .ticker{animation-duration:8s!important;}
     .impact-inner{grid-template-columns:repeat(2,1fr);}
     .about-grid{grid-template-columns:1fr;gap:30px;}
     .about-text{text-align:center;display:flex;flex-direction:column;align-items:center;}
