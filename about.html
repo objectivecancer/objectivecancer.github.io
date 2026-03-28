@@ -11,7 +11,7 @@
   html{scroll-behavior:smooth;}
   body{font-family:'Segoe UI',sans-serif;background:var(--white);color:var(--text);}
   nav{position:fixed;top:0;width:100%;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:12px 60px;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,63,168,0.08);box-shadow:0 2px 20px rgba(26,63,168,0.06);}
-  .logo-nav{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .logo-nav{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
   .logo-img{width:46px;height:46px;border-radius:50%;object-fit:cover;}
   .logo-text{font-size:1rem;font-weight:900;color:var(--blue);line-height:1.2;}
   .logo-text span{display:block;font-size:.65rem;letter-spacing:2px;color:var(--accent);font-weight:600;text-transform:uppercase;text-align:center;}
@@ -20,24 +20,38 @@
   .nav-links a:hover,.nav-links a.active{color:var(--blue);font-weight:700;}
   .nav-cta{background:var(--blue)!important;color:#fff!important;padding:9px 20px;border-radius:8px;font-weight:700!important;}
   .dark-toggle{background:none;border:2px solid rgba(26,63,168,0.2);border-radius:20px;padding:6px 14px;cursor:pointer;font-size:.85rem;color:var(--gray);transition:all .3s;display:flex;align-items:center;gap:6px;}
-  .dark-toggle:hover{border-color:var(--blue);color:var(--blue);}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--blue);border-radius:2px;}
+  .mobile-menu{display:none;position:fixed;top:70px;left:0;width:100%;background:#fff;border-bottom:1px solid rgba(26,63,168,0.1);box-shadow:0 8px 20px rgba(26,63,168,0.1);z-index:998;padding:20px;}
+  .mobile-menu.open{display:flex;flex-direction:column;gap:4px;}
+  .mobile-menu a,.mobile-menu button{padding:12px 16px;color:var(--gray);text-decoration:none;font-size:.95rem;font-weight:500;border-radius:8px;border:none;background:none;cursor:pointer;text-align:left;font-family:inherit;}
+  .mobile-menu .mob-cta{background:var(--blue);color:#fff!important;font-weight:700;text-align:center;border-radius:8px;padding:12px 16px;}
+  body.dark .mobile-menu{background:#111128;}
+  body.dark .mobile-menu a{color:#aaa;}
+
   /* HERO */
   .page-hero{padding:140px 40px 80px;background:linear-gradient(135deg,var(--blue) 0%,var(--accent) 100%);text-align:center;color:#fff;position:relative;overflow:hidden;}
   .page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:rgba(255,255,255,0.05);border-radius:50%;}
   .page-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.75);font-weight:700;margin-bottom:12px;}
   .page-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:16px;color:#fff;}
   .page-sub{font-size:1.05rem;color:rgba(255,255,255,0.85);max-width:580px;margin:0 auto;line-height:1.8;}
-  /* SECTIONS */
-  .section-white{padding:80px 20px;background:#fff;}
-  .section-offwhite{padding:80px 20px;background:var(--offwhite);}
-  .section-blue{padding:80px 20px;background:linear-gradient(135deg,var(--blue) 0%,var(--accent) 100%);color:#fff;}
+
+  /* SECTIONS - alternating for contrast */
+  .sec-white{padding:80px 20px;background:#fff;}
+  .sec-offwhite{padding:80px 20px;background:var(--offwhite);}
+  .sec-blue{padding:80px 20px;background:linear-gradient(135deg,var(--blue) 0%,var(--accent) 100%);color:#fff;}
   .container{max-width:1100px;margin:0 auto;padding:0 20px;}
-  .section-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:10px;text-align:center;}
-  .section-tag-white{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.75);font-weight:700;margin-bottom:10px;text-align:center;}
-  .section-title{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;color:var(--text);margin-bottom:12px;text-align:center;}
-  .section-title-white{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;color:#fff;margin-bottom:12px;text-align:center;}
-  .section-sub{color:var(--gray);font-size:.97rem;line-height:1.8;max-width:580px;text-align:center;margin:0 auto 50px;}
-  .section-sub-white{color:rgba(255,255,255,0.85);font-size:.97rem;line-height:1.8;max-width:580px;text-align:center;margin:0 auto 50px;}
+
+  .sec-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:10px;text-align:center;}
+  .sec-tag-dark{color:var(--blue);}
+  .sec-tag-light{color:rgba(255,255,255,0.75);}
+  .sec-title{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;margin-bottom:12px;text-align:center;}
+  .sec-title-dark{color:var(--text);}
+  .sec-title-light{color:#fff;}
+  .sec-sub{font-size:.97rem;line-height:1.8;max-width:580px;text-align:center;margin:0 auto 50px;}
+  .sec-sub-dark{color:var(--gray);}
+  .sec-sub-light{color:rgba(255,255,255,0.85);}
+
   /* MISSION */
   .mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:50px;}
   .mission-text p{color:var(--gray);line-height:1.9;font-size:.97rem;margin-bottom:16px;}
@@ -46,8 +60,17 @@
   .btn{padding:13px 28px;border-radius:10px;font-size:.92rem;font-weight:700;text-decoration:none;transition:all .3s;display:inline-block;}
   .btn-primary{background:var(--blue);color:#fff;box-shadow:0 4px 18px rgba(26,63,168,0.28);}
   .btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);}
-  .btn-white{background:#fff;color:var(--blue);box-shadow:0 4px 18px rgba(0,0,0,0.1);}
-  .btn-white:hover{transform:translateY(-2px);}
+
+  /* COFOUNDERS */
+  .founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:800px;margin:50px auto 0;}
+  .founder-card{background:#fff;border-radius:20px;padding:40px;text-align:center;border:2px solid rgba(26,63,168,0.1);box-shadow:0 4px 16px rgba(26,63,168,0.06);transition:all .3s;}
+  .founder-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(26,63,168,0.12);border-color:var(--blue);}
+  .founder-photo{width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto 20px;border:3px solid var(--blue);}
+  .founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+  .founder-name{font-size:1.3rem;font-weight:900;color:var(--text);margin-bottom:6px;}
+  .founder-role{font-size:.82rem;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;}
+  .founder-desc{color:var(--gray);font-size:.9rem;line-height:1.7;}
+
   /* VALUES */
   .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px;}
   .value-card{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:14px;padding:22px 24px;transition:all .3s;}
@@ -55,6 +78,7 @@
   .value-icon{font-size:1.8rem;margin-bottom:12px;}
   .value-title{font-size:1rem;font-weight:800;color:#fff;margin-bottom:8px;}
   .value-text{color:rgba(255,255,255,0.85);font-size:.88rem;line-height:1.7;}
+
   /* STORY */
   .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:50px;}
   .story-text p{color:var(--gray);line-height:1.9;font-size:.97rem;margin-bottom:16px;}
@@ -62,11 +86,14 @@
   .story-stat{background:#fff;border-radius:14px;padding:24px;border:1px solid rgba(26,63,168,0.08);box-shadow:0 2px 10px rgba(26,63,168,0.04);}
   .story-stat-num{font-size:2rem;font-weight:900;color:var(--blue);}
   .story-stat-label{color:var(--gray);font-size:.88rem;margin-top:4px;}
+
   /* CTA */
-  .cta-banner{background:#fff;padding:80px 20px;text-align:center;border-top:1px solid rgba(26,63,168,0.08);}
-  .cta-banner h2{font-size:2rem;font-weight:900;margin-bottom:14px;color:var(--text);}
-  .cta-banner p{color:var(--gray);max-width:480px;margin:0 auto 32px;line-height:1.7;}
-  /* FOOTER */
+  .cta-banner{background:linear-gradient(135deg,var(--blue) 0%,var(--accent) 100%);padding:80px 20px;text-align:center;color:#fff;}
+  .cta-banner h2{font-size:2rem;font-weight:900;margin-bottom:14px;color:#fff;}
+  .cta-banner p{color:rgba(255,255,255,0.85);max-width:480px;margin:0 auto 32px;line-height:1.7;}
+  .btn-white{background:#fff;color:var(--blue);padding:14px 40px;border-radius:10px;font-size:1rem;font-weight:800;text-decoration:none;display:inline-block;transition:all .3s;box-shadow:0 4px 18px rgba(0,0,0,0.12);}
+  .btn-white:hover{transform:translateY(-2px);}
+
   footer{background:var(--text);color:rgba(255,255,255,0.45);text-align:center;padding:44px 20px;}
   .footer-logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:14px;}
   .footer-logo img{width:38px;height:38px;border-radius:50%;}
@@ -74,49 +101,39 @@
   .footer-logo-text span{color:#7a9fff;}
   footer p{font-size:.83rem;line-height:1.8;}
   footer a{color:#7a9fff;text-decoration:none;}
+
   /* DARK MODE */
   body.dark{background:#111128;color:#e8eeff;}
   body.dark nav{background:rgba(13,13,26,0.97)!important;border-bottom-color:rgba(255,255,255,0.06);}
   body.dark .logo-text{color:#7a9fff;}
   body.dark .nav-links a{color:#aaa;}
   body.dark .dark-toggle{border-color:rgba(255,255,255,0.2);color:#aaa;}
-  body.dark .section-white{background:#111128;}
-  body.dark .section-offwhite{background:#0d0d1a;}
-  body.dark .section-title{color:#e8eeff;}
-  body.dark .section-sub{color:#bbb;}
-  body.dark .section-tag{color:#7a9fff;}
+  body.dark .sec-white{background:#111128;}
+  body.dark .sec-offwhite{background:#0d0d1a;}
+  body.dark .sec-title-dark{color:#e8eeff;}
+  body.dark .sec-sub-dark{color:#bbb;}
+  body.dark .sec-tag-dark{color:#7a9fff;}
   body.dark .mission-text p{color:#bbb;}
+  body.dark .founder-card{background:#1a1a2e;border-color:rgba(255,255,255,0.08);}
+  body.dark .founder-name{color:#e8eeff;}
+  body.dark .founder-role{color:#7a9fff;}
+  body.dark .founder-desc{color:#bbb;}
   body.dark .story-text p{color:#bbb;}
   body.dark .story-stat{background:#1a1a2e;border-color:rgba(255,255,255,0.06);}
   body.dark .story-stat-num{color:#7a9fff;}
   body.dark .story-stat-label{color:#aaa;}
-  body.dark .cta-banner{background:#111128;border-top-color:rgba(255,255,255,0.06);}
-  body.dark .cta-banner h2{color:#e8eeff;}
-  body.dark .cta-banner p{color:#bbb;}
   body.dark footer{background:#080810;}
-  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;margin-left:auto;}
-  .hamburger span{display:block;width:24px;height:2px;background:var(--blue);border-radius:2px;transition:all .3s;}
-  .mobile-menu{display:none;position:fixed;top:70px;left:0;width:100%;background:#fff;border-bottom:1px solid rgba(26,63,168,0.1);box-shadow:0 8px 20px rgba(26,63,168,0.1);z-index:998;padding:20px;}
-  .mobile-menu.open{display:flex;flex-direction:column;gap:4px;}
-  .mobile-menu a,.mobile-menu button{padding:12px 16px;color:var(--gray);text-decoration:none;font-size:.95rem;font-weight:500;border-radius:8px;transition:all .3s;border:none;background:none;cursor:pointer;text-align:left;font-family:inherit;}
-  .mobile-menu a:hover{background:var(--blue-light);color:var(--blue);}
-  .mobile-menu .mob-cta{background:var(--blue);color:#fff!important;font-weight:700;text-align:center;border-radius:8px;padding:12px 16px;}
-  body.dark .mobile-menu{background:#111128;}
-  body.dark .mobile-menu a{color:#aaa;}
+
   @media(max-width:768px){
     nav{padding:12px 20px;}
     .nav-links{display:none;}
     .hamburger{display:flex;}
     .page-hero{padding:100px 20px 60px;}
-    .page-title{font-size:2rem;}
-    .mission-grid,.story-grid,.values-grid{grid-template-columns:1fr;}
+    .mission-grid,.story-grid,.values-grid,.founders-grid{grid-template-columns:1fr;}
     .mission-text{text-align:center;display:flex;flex-direction:column;align-items:center;}
     .story-text{text-align:center;}
-    .section-title,.section-title-white{text-align:center;}
-    .section-tag,.section-tag-white{text-align:center;}
-    .section-sub,.section-sub-white{text-align:center;margin:0 auto 30px;}
     .container{padding:0 16px;}
-    .cta-banner{padding:50px 16px;text-align:center;}
+    .sec-white,.sec-offwhite,.sec-blue{padding:50px 16px;}
     footer{padding:30px 16px;}
   }
 </style>
@@ -152,12 +169,12 @@
   <p class="page-sub">A student-led 501(c)3 nonprofit dedicated to raising awareness for cancer in all its forms and promoting proactiveness in early detection and prevention.</p>
 </div>
 
-<!-- MISSION -->
-<div class="section-white">
+<!-- WHY WE EXIST - WHITE -->
+<div class="sec-white">
   <div class="container">
-    <div class="section-tag">Our Mission</div>
-    <h2 class="section-title">Why We Exist</h2>
-    <p style="text-align:center;color:var(--gray);max-width:600px;margin:0 auto 50px;line-height:1.8;">We believe that knowledge is the most powerful weapon against cancer.</p>
+    <div class="sec-tag sec-tag-dark">Our Mission</div>
+    <h2 class="sec-title sec-title-dark">Why We Exist</h2>
+    <p class="sec-sub sec-sub-dark">We believe that knowledge is the most powerful weapon against cancer.</p>
     <div class="mission-grid">
       <div class="mission-text">
         <p>Objective: Cancer was founded on a simple but powerful belief: that knowledge saves lives. Too many people are affected by cancer every year, and too many of those cases could have been prevented or detected earlier with the right information.</p>
@@ -166,43 +183,41 @@
         <a href="donate.html" class="btn btn-primary" style="margin-top:10px;">Support Our Mission</a>
       </div>
       <div class="mission-img">
-        <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/post1.png" alt="Objective Cancer Donation Drive"/>
+        <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/post1.png" alt="Objective Cancer"/>
       </div>
     </div>
   </div>
 </div>
 
-<!-- COFOUNDERS -->
-<div style="background:var(--offwhite);padding:80px 20px;">
+<!-- COFOUNDERS - OFFWHITE -->
+<div class="sec-offwhite">
   <div class="container">
-    <div class="section-tag">Our Founders</div>
-    <h2 class="section-title">Meet the Co-Founders</h2>
-    <p class="section-sub">Objective: Cancer was built from the ground up by two passionate students determined to make a difference.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:50px;max-width:800px;margin-left:auto;margin-right:auto;">
-      <div style="background:var(--offwhite);border-radius:20px;padding:40px;text-align:center;border:2px solid rgba(26,63,168,0.08);transition:all .3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(26,63,168,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-        <div style="width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto 20px;border:3px solid var(--blue);">
-          <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/daniel.png" alt="Daniel Le" style="width:100%;height:100%;object-fit:cover;object-position:center top;"/>
-        </div>
-        <div style="font-size:1.3rem;font-weight:900;color:var(--text);margin-bottom:6px;">Daniel Le</div>
-        <div style="font-size:.82rem;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">Co-Founder</div>
-        <div style="color:var(--gray);font-size:.9rem;line-height:1.7;">I'm studying Cell & Molecular Biology (pre-health) at Northeastern University with a dream of becoming a pediatrician. When I'm not working on Objective: Cancer, you'll find me on the pickleball court or hunting for rare Pokémon cards! 🎴</div>
+    <div class="sec-tag sec-tag-dark">Our Founders</div>
+    <h2 class="sec-title sec-title-dark">Meet the Co-Founders</h2>
+    <p class="sec-sub sec-sub-dark">Objective: Cancer was built from the ground up by two passionate students determined to make a difference.</p>
+    <div class="founders-grid">
+      <div class="founder-card">
+        <div class="founder-photo"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/daniel.png" alt="Daniel Le"/></div>
+        <div class="founder-name">Daniel Le</div>
+        <div class="founder-role">Co-Founder</div>
+        <div class="founder-desc">I'm studying Cell & Molecular Biology (pre-health) at Northeastern University with a dream of becoming a pediatrician. When I'm not working on Objective: Cancer, you'll find me on the pickleball court or hunting for rare Pokémon cards! 🎴</div>
       </div>
-      <div style="background:var(--offwhite);border-radius:20px;padding:40px;text-align:center;border:2px solid rgba(26,63,168,0.08);transition:all .3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(26,63,168,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-        <div style="width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto 20px;border:3px solid var(--blue);">
-          <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/tammy.png" alt="Tammy Le" style="width:100%;height:100%;object-fit:cover;object-position:center top;"/>
-        </div>
-        <div style="font-size:1.3rem;font-weight:900;color:var(--text);margin-bottom:6px;">Tammy Le</div>
-        <div style="font-size:.82rem;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">Co-Founder</div>
-        <div style="color:var(--gray);font-size:.9rem;line-height:1.7;">I'm studying Biochemistry (pre-health) at Northeastern University with my sights set on becoming a neurosurgeon. Outside of the lab and Objective: Cancer, I love crocheting and getting lost in a good book! 🧶📚</div>
+      <div class="founder-card">
+        <div class="founder-photo"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/tammy.png" alt="Tammy Le"/></div>
+        <div class="founder-name">Tammy Le</div>
+        <div class="founder-role">Co-Founder</div>
+        <div class="founder-desc">I'm studying Biochemistry (pre-health) at Northeastern University with my sights set on becoming a neurosurgeon. Outside of the lab and Objective: Cancer, I love crocheting and getting lost in a good book! 🧶📚</div>
       </div>
     </div>
   </div>
 </div>
-<div class="section-blue">
+
+<!-- VALUES - BLUE -->
+<div class="sec-blue">
   <div class="container">
-    <div class="section-tag-white">What We Stand For</div>
-    <h2 class="section-title-white">Our Core Values</h2>
-    <p class="section-sub-white">The principles that guide everything we do.</p>
+    <div class="sec-tag sec-tag-light">What We Stand For</div>
+    <h2 class="sec-title sec-title-light">Our Core Values</h2>
+    <p class="sec-sub sec-sub-light">The principles that guide everything we do.</p>
     <div class="values-grid">
       <div class="value-card"><div class="value-icon">💡</div><div class="value-title">Education First</div><div class="value-text">We believe that informed people make better health decisions. We prioritize clear, accessible, and accurate cancer education.</div></div>
       <div class="value-card"><div class="value-icon">🎯</div><div class="value-title">Proactiveness</div><div class="value-text">We encourage early detection and prevention. Taking action before a crisis is always better than reacting after one.</div></div>
@@ -214,11 +229,11 @@
   </div>
 </div>
 
-<!-- STORY -->
-<div class="section-offwhite">
+<!-- STORY - WHITE -->
+<div class="sec-white">
   <div class="container">
-    <div class="section-tag">Our Story</div>
-    <h2 class="section-title">How We Got Here</h2>
+    <div class="sec-tag sec-tag-dark">Our Story</div>
+    <h2 class="sec-title sec-title-dark">How We Got Here</h2>
     <div class="story-grid">
       <div class="story-text">
         <p>Objective: Cancer started as a small idea among students who wanted to make a difference. We saw how cancer touched the lives of people around us — family members, teachers, friends — and felt compelled to act.</p>
@@ -235,11 +250,11 @@
   </div>
 </div>
 
-<!-- CTA -->
+<!-- CTA - BLUE -->
 <div class="cta-banner">
   <h2>Want to Get Involved? 🎗️</h2>
   <p>Whether you want to donate, start a chapter, or just spread the word — there's a place for you in our mission.</p>
-  <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+  <a href="contact.html" class="btn-white">Get in Touch</a>
 </div>
 
 <footer>
@@ -256,7 +271,7 @@
   if(localStorage.getItem('dark')==='true'){document.body.classList.add('dark');document.querySelector('.dark-toggle').innerHTML='☀️ Light';}
   function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
   const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';}});},{threshold:0.08});
-  document.querySelectorAll('.section-white,.section-offwhite,.section-blue,.cta-banner').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity .65s ease,transform .65s ease';obs.observe(el);});
+  document.querySelectorAll('.sec-white,.sec-offwhite,.sec-blue,.cta-banner').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity .65s ease,transform .65s ease';obs.observe(el);});
 </script>
 </body>
 </html>
