@@ -54,12 +54,19 @@
   .hero-logo{flex-shrink:0;width:380px;height:380px;border-radius:50%;overflow:hidden;}
   .hero-logo img{width:100%;height:100%;object-fit:contain;}
 
-  /* TICKER */
-  .ticker-wrap{width:100%;background:var(--blue);padding:16px 0;overflow:hidden;}
-  .ticker{display:flex;white-space:nowrap;animation:tickerscroll 35s linear infinite;}
-  .ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 36px;font-size:.88rem;font-weight:600;color:#fff;letter-spacing:.3px;}
-  .ticker-dot{width:6px;height:6px;background:rgba(255,255,255,0.4);border-radius:50%;flex-shrink:0;}
-  @keyframes tickerscroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+  /* FACTS */
+  .facts-section{background:var(--blue);padding:60px 20px;}
+  .facts-header{text-align:center;margin-bottom:36px;}
+  .facts-header h2{font-size:1.6rem;font-weight:900;color:#fff;margin-bottom:8px;}
+  .facts-header p{color:rgba(255,255,255,0.75);font-size:.9rem;}
+  .facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1100px;margin:0 auto;}
+  .fact-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:14px;padding:22px;transition:all .3s;}
+  .fact-card:hover{background:rgba(255,255,255,0.18);transform:translateY(-3px);}
+  .fact-stat{font-size:1.8rem;font-weight:900;color:#fff;margin-bottom:8px;}
+  .fact-text{font-size:.85rem;color:rgba(255,255,255,0.9);line-height:1.6;margin-bottom:12px;}
+  .fact-source{font-size:.72rem;color:rgba(255,255,255,0.5);font-style:italic;}
+  .fact-source a{color:rgba(255,255,255,0.6);text-decoration:underline;}
+  .fact-source a:hover{color:#fff;}
 
   /* IMPACT BAR */
   .impact-bar{width:100%;background:#bdd4f7;padding:60px 20px;}
@@ -123,6 +130,7 @@
   body.dark #home{background:linear-gradient(155deg,#0d0d1a 0%,#111128 50%,#0d0d1a 100%);}
   body.dark h1{color:#e8eeff;}
   body.dark .hero-sub{color:#aaa;}
+  body.dark .facts-section{background:#0d1535;}
   body.dark .impact-bar{background:#0d1535;}
   body.dark .impact-item{background:#1a1a2e;border-color:rgba(255,255,255,0.06);}
   body.dark .impact-num{color:#7a9fff;}
@@ -177,7 +185,7 @@
     .hero-btns{justify-content:center;gap:8px;}
     .btn{padding:10px 20px;font-size:.85rem;}
     .chapter-cta{font-size:.78rem;padding:10px 16px;margin-top:8px;}
-    .ticker{animation-duration:8s!important;}
+    .facts-grid{grid-template-columns:repeat(2,1fr);}
     .impact-inner{grid-template-columns:repeat(2,1fr);}
     .about-grid{grid-template-columns:1fr;gap:30px;}
     .about-text{text-align:center;display:flex;flex-direction:column;align-items:center;}
@@ -231,24 +239,52 @@
   </div>
 </section>
 
-<div class="ticker-wrap">
-  <div class="ticker">
-    <span class="ticker-item"><span class="ticker-dot"></span>1 in 2 men will develop cancer in their lifetime</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>1 in 3 women will develop cancer in their lifetime</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Over 20 million new cancer cases diagnosed globally each year</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>30-50% of cancers are preventable</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Early detection can increase survival rates by up to 90%</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Tobacco use is the leading preventable cause of cancer</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Regular screenings save thousands of lives each year</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>A healthy lifestyle can reduce cancer risk by up to 40%</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>1 in 2 men will develop cancer in their lifetime</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>1 in 3 women will develop cancer in their lifetime</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Over 20 million new cancer cases diagnosed globally each year</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>30-50% of cancers are preventable</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Early detection can increase survival rates by up to 90%</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Tobacco use is the leading preventable cause of cancer</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Regular screenings save thousands of lives each year</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>A healthy lifestyle can reduce cancer risk by up to 40%</span>
+<div class="facts-section">
+  <div class="facts-header">
+    <h2>Cancer By The Numbers</h2>
+    <p>Facts that drive our mission — backed by research.</p>
+  </div>
+  <div class="facts-grid">
+    <div class="fact-card">
+      <div class="fact-stat">1 in 2</div>
+      <div class="fact-text">Men in the US will develop cancer at some point in their lifetime.</div>
+      <div class="fact-source">Source: <a href="https://www.cancer.org/research/cancer-facts-statistics/all-cancer-facts-figures/cancer-facts-figures-2024.html" target="_blank">American Cancer Society, 2024</a></div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-stat">1 in 3</div>
+      <div class="fact-text">Women in the US will develop cancer at some point in their lifetime.</div>
+      <div class="fact-source">Source: <a href="https://www.cancer.org/research/cancer-facts-statistics/all-cancer-facts-figures/cancer-facts-figures-2024.html" target="_blank">American Cancer Society, 2024</a></div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-stat">20M+</div>
+      <div class="fact-text">New cancer cases are diagnosed globally each year, a number that continues to rise.</div>
+      <div class="fact-source">Source: <a href="https://www.who.int/news-room/fact-sheets/detail/cancer" target="_blank">World Health Organization</a></div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-stat">30–50%</div>
+      <div class="fact-text">Of all cancer cases are preventable through lifestyle changes and early action.</div>
+      <div class="fact-source">Source: <a href="https://www.who.int/news-room/fact-sheets/detail/cancer" target="_blank">World Health Organization</a></div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-stat">Up to 90%</div>
+      <div class="fact-text">Survival rate improvement is possible with early detection for many cancer types.</div>
+      <div class="fact-source">Source: <a href="https://www.cancer.net/navigating-cancer-care/cancer-basics/understanding-statistics-used-guide-prognosis-and-evaluate-treatment" target="_blank">Cancer.Net / ASCO</a></div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-stat">#1</div>
+      <div class="fact-text">Tobacco use is the single largest preventable cause of cancer death worldwide.</div>
+      <div class="fact-source">Source: <a href="https://www.cdc.gov/cancer/risk_factors/tobacco.html" target="_blank">CDC</a></div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-stat">40%</div>
+      <div class="fact-text">Of cancer risk can be reduced by maintaining a healthy diet, exercise routine, and avoiding known carcinogens.</div>
+      <div class="fact-source">Source: <a href="https://www.wcrf.org/preventing-cancer/cancer-prevention-recommendations/" target="_blank">World Cancer Research Fund</a></div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-stat">600K+</div>
+      <div class="fact-text">Americans die from cancer each year, making it the second leading cause of death in the US.</div>
+      <div class="fact-source">Source: <a href="https://www.cancer.org/research/cancer-facts-statistics/all-cancer-facts-figures/cancer-facts-figures-2024.html" target="_blank">American Cancer Society, 2024</a></div>
+    </div>
   </div>
 </div>
 
