@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/favicon.png"/>
+<title>Our Members — Objective: Cancer</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--blue:#1a3fa8;--blue-dark:#122d85;--blue-light:#e8eeff;--accent:#2f57d4;--white:#fff;--offwhite:#f5f7ff;--gray:#666;--text:#1a1a2e;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Segoe UI',sans-serif;background:var(--white);color:var(--text);}
+  nav{position:fixed;top:0;width:100%;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:12px 60px;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,63,168,0.08);box-shadow:0 2px 20px rgba(26,63,168,0.06);}
+  .logo-nav{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
+  .logo-img{width:46px;height:46px;border-radius:50%;object-fit:cover;}
+  .logo-text{font-size:1rem;font-weight:900;color:var(--blue);line-height:1.2;}
+  .logo-text span{display:block;font-size:.65rem;letter-spacing:2px;color:var(--accent);font-weight:600;text-transform:uppercase;text-align:center;}
+  .nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
+  .nav-links a{color:var(--gray);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .3s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--blue);font-weight:700;}
+  .nav-cta{background:var(--blue)!important;color:#fff!important;padding:9px 20px;border-radius:8px;font-weight:700!important;}
+  .dark-toggle{background:none;border:2px solid rgba(26,63,168,0.2);border-radius:20px;padding:6px 14px;cursor:pointer;font-size:.85rem;color:var(--gray);transition:all .3s;display:flex;align-items:center;gap:6px;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--blue);border-radius:2px;}
+  .mobile-menu{display:none;position:fixed;top:70px;left:0;width:100%;background:#fff;border-bottom:1px solid rgba(26,63,168,0.1);box-shadow:0 8px 20px rgba(26,63,168,0.1);z-index:998;padding:20px;}
+  .mobile-menu.open{display:flex;flex-direction:column;gap:4px;}
+  .mobile-menu a,.mobile-menu button{padding:12px 16px;color:var(--gray);text-decoration:none;font-size:.95rem;font-weight:500;border-radius:8px;border:none;background:none;cursor:pointer;text-align:left;font-family:inherit;}
+  .mobile-menu .mob-cta{background:var(--blue);color:#fff!important;font-weight:700;text-align:center;border-radius:8px;padding:12px 16px;}
+  body.dark .mobile-menu{background:#111128;}
+  body.dark .mobile-menu a{color:#aaa;}
+
+  /* HERO */
+  .page-hero{padding:140px 40px 80px;background:linear-gradient(135deg,var(--blue) 0%,var(--accent) 100%);text-align:center;color:#fff;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:rgba(255,255,255,0.05);border-radius:50%;}
+  .page-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.75);font-weight:700;margin-bottom:12px;}
+  .page-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:16px;color:#fff;}
+  .page-sub{font-size:1.05rem;color:rgba(255,255,255,0.85);max-width:580px;margin:0 auto;line-height:1.8;}
+
+  /* MEMBERS */
+  .members-section{padding:80px 20px;background:var(--offwhite);}
+  .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+  .sec-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:10px;text-align:center;}
+  .sec-title{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;color:var(--text);margin-bottom:12px;text-align:center;}
+  .sec-sub{font-size:.97rem;color:var(--gray);line-height:1.8;max-width:580px;text-align:center;margin:0 auto 50px;}
+  .members-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .member-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid rgba(26,63,168,0.08);box-shadow:0 2px 16px rgba(26,63,168,0.06);transition:all .3s;}
+  .member-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,63,168,0.12);}
+  .member-photo{width:100%;aspect-ratio:4/3;background:#eef2ff;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  .member-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+  .member-photo-placeholder{font-size:2rem;color:rgba(26,63,168,0.2);}
+  .member-body{padding:22px 24px 26px;}
+  .member-role{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+  .member-name{font-size:1.15rem;font-weight:900;color:var(--text);margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(26,63,168,0.08);}
+  .college-label{font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:6px;}
+  .college-name{font-size:.97rem;font-weight:800;color:var(--text);margin-bottom:3px;}
+  .college-major{font-size:.83rem;color:var(--gray);line-height:1.5;margin-bottom:6px;}
+  .college-badge{font-size:.78rem;color:var(--accent);font-weight:600;}
+
+  /* DARK MODE */
+  body.dark{background:#111128;color:#e8eeff;}
+  body.dark nav{background:rgba(13,13,26,0.97)!important;border-bottom-color:rgba(255,255,255,0.06);}
+  body.dark .logo-text{color:#7a9fff;}
+  body.dark .nav-links a{color:#aaa;}
+  body.dark .dark-toggle{border-color:rgba(255,255,255,0.2);color:#aaa;}
+  body.dark .members-section{background:#0d0d1a;}
+  body.dark .member-card{background:#1a1a2e;border-color:rgba(255,255,255,0.06);}
+  body.dark .member-name{color:#e8eeff;}
+  body.dark .sec-title{color:#e8eeff;}
+  body.dark .sec-sub{color:#bbb;}
+  body.dark .college-box{background:#111128;}
+  body.dark .college-name{color:#e8eeff;}
+  body.dark .college-major{color:#aaa;}
+  body.dark .member-photo{background:#1a1a2e;}
+  body.dark footer{background:#080810;}
+
+  footer{background:var(--text);color:rgba(255,255,255,0.45);text-align:center;padding:44px 20px;}
+  .footer-logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:14px;}
+  .footer-logo img{width:38px;height:38px;border-radius:50%;object-fit:cover;}
+  .footer-logo-text{font-size:1.2rem;font-weight:900;color:#fff;}
+  .footer-logo-text span{color:#7a9fff;}
+  footer p{font-size:.83rem;line-height:1.8;}
+  footer a{color:#7a9fff;text-decoration:none;}
+
+  @media(max-width:768px){
+    nav{padding:12px 20px;}
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+    .page-hero{padding:100px 20px 60px;}
+    .members-grid{grid-template-columns:1fr;}
+    .container{padding:0 16px;}
+    footer{padding:30px 16px;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo-nav">
+    <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/logo.png" class="logo-img" alt="Logo"/>
+    <div class="logo-text">OBJECTIVE: CANCER<span>Prevention · Awareness · Support</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#chapters">Chapters</a></li>
+    <li><a href="members.html" class="active">Our Members</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="donate.html" class="nav-cta">Donate Now</a></li>
+    <li><button class="dark-toggle" onclick="toggleDark()">🌙 Dark</button></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="index.html#chapters">Chapters</a>
+  <a href="members.html">Our Members</a>
+  <a href="contact.html">Contact</a>
+  <a href="donate.html" class="mob-cta">Donate Now</a>
+  <button onclick="toggleDark();toggleMenu();">🌙 Toggle Dark Mode</button>
+</div>
+
+<div class="page-hero">
+  <div class="page-tag">The People Behind the Mission</div>
+  <h1 class="page-title">Our Members</h1>
+  <p class="page-sub">Meet the dedicated students driving Objective: Cancer forward — and see where they're headed next.</p>
+</div>
+
+<div class="members-section">
+  <div class="container">
+    <div class="sec-tag">Leadership & Members</div>
+    <h2 class="sec-title">Where We're Headed</h2>
+    <p class="sec-sub">Our members are not just cancer advocates — they're future doctors, scientists, and leaders making their mark.</p>
+    <div class="members-grid">
+
+      <div class="member-card">
+        <div class="member-photo"><div class="member-photo-placeholder">—</div></div>
+        <div class="member-body">
+          <div class="member-role">Event Coordinator</div>
+          <div class="member-name">Annelys Baez</div>
+          <div style="font-size:.78rem;color:var(--gray);margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(26,63,168,0.08);">BLA Chapter · Class of 2026</div>
+          <div class="college-label">College Commitment</div>
+          <div class="college-name">Boston University</div>
+          <div class="college-major">Major: Biochemistry & Molecular Biology</div>
+          <div class="college-badge">Menino Scholar</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-photo"><div class="member-photo-placeholder">—</div></div>
+        <div class="member-body">
+          <div class="member-role">Vice President</div>
+          <div class="member-name">Aria Do</div>
+          <div style="font-size:.78rem;color:var(--gray);margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(26,63,168,0.08);">BLA Chapter · Class of 2026</div>
+          <div class="college-label">College Commitment</div>
+          <div class="college-name">Northeastern University</div>
+          <div class="college-major">Major: Behavioral Neuroscience</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-photo"><div class="member-photo-placeholder">👤</div></div>
+        <div class="member-body">
+          <div class="member-role">Treasurer</div>
+          <div class="member-name">Randy Le</div>
+          <div style="font-size:.78rem;color:var(--gray);margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(26,63,168,0.08);">BLA Chapter · Class of 2026</div>
+          <div class="college-label">College Commitment</div>
+          <div class="college-name">Northeastern University</div>
+          <div class="college-major">Major: Business Administration: Management Information Systems</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/logo.png" alt="Logo"/>
+    <div class="footer-logo-text">OBJECTIVE<span>:</span>CANCER</div>
+  </div>
+  <p>A student-led 501(c)3 nonprofit raising awareness for cancer in all its forms.</p>
+  <p style="margin-top:8px;"><a href="https://www.instagram.com/objectivecancer" target="_blank">Instagram</a> · <a href="https://linktr.ee/objectivecancer" target="_blank">Linktree</a></p>
+  <p style="margin-top:14px;">© 2025 Objective: Cancer · All rights reserved</p>
+</footer>
+<script>
+  function toggleDark(){document.body.classList.toggle('dark');const btn=document.querySelector('.dark-toggle');btn.innerHTML=document.body.classList.contains('dark')?'☀️ Light':'🌙 Dark';localStorage.setItem('dark',document.body.classList.contains('dark'));}
+  if(localStorage.getItem('dark')==='true'){document.body.classList.add('dark');document.querySelector('.dark-toggle').innerHTML='☀️ Light';}
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+  const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';}});},{threshold:0.08});
+  document.querySelectorAll('.members-section').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity .65s ease,transform .65s ease';obs.observe(el);});
+</script>
+</body>
+</html>
