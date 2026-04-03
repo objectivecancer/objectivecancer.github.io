@@ -4,10 +4,10 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/favicon.png"/>
-<title>BLA Chapter — Objective: Cancer</title>
+<title>BLS Chapter — Objective: Cancer</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
-  :root{--blue:#1a3fa8;--blue-dark:#122d85;--blue-light:#e8eeff;--accent:#2f57d4;--white:#fff;--offwhite:#f5f7ff;--gray:#666;--text:#1a1a2e;--bla:#b8860b;}
+  :root{--blue:#1a3fa8;--blue-dark:#122d85;--blue-light:#e8eeff;--accent:#2f57d4;--white:#fff;--offwhite:#f5f7ff;--gray:#666;--text:#1a1a2e;--bls:#4a1f8c;}
   body{font-family:'Segoe UI',sans-serif;background:var(--white);color:var(--text);}
   nav{position:fixed;top:0;width:100%;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:12px 60px;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,63,168,0.08);box-shadow:0 2px 20px rgba(26,63,168,0.06);}
   .logo-nav{display:flex;align-items:center;gap:12px;text-decoration:none;}
@@ -27,8 +27,7 @@
   .mobile-menu .mob-cta{background:var(--blue);color:#fff!important;font-weight:700;text-align:center;border-radius:8px;padding:12px 16px;}
   body.dark .mobile-menu{background:#111128;}
   body.dark .mobile-menu a{color:#aaa;}
-  /* HERO */
-  .page-hero{padding:120px 60px 80px;background:linear-gradient(135deg,#b8860b 0%,#8b6508 100%);color:#fff;position:relative;overflow:hidden;}
+  .page-hero{padding:120px 60px 80px;background:linear-gradient(135deg,#4a1f8c 0%,#2d1260 100%);color:#fff;position:relative;overflow:hidden;}
   .page-hero::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;background:rgba(255,255,255,0.04);border-radius:50%;}
   .hero-inner{display:flex;align-items:center;gap:60px;max-width:1100px;margin:0 auto;}
   .hero-logo-wrap{flex-shrink:0;width:180px;height:180px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:24px;box-shadow:0 10px 40px rgba(0,0,0,0.2);overflow:hidden;}
@@ -41,46 +40,19 @@
   .hero-stat{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:16px 24px;text-align:center;}
   .hero-stat-num{font-size:1.5rem;font-weight:900;color:#fff;}
   .hero-stat-label{font-size:.78rem;color:rgba(255,255,255,0.65);margin-top:4px;}
-  /* SECTIONS */
   section{padding:80px 20px;}
   .container{max-width:1100px;margin:0 auto;padding:0 20px;}
-  .section-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--bla);font-weight:700;margin-bottom:10px;text-align:center;}
+  .section-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--bls);font-weight:700;margin-bottom:10px;text-align:center;}
   .section-title{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;color:var(--text);margin-bottom:12px;text-align:center;}
   .section-sub{color:var(--gray);font-size:.97rem;line-height:1.8;max-width:580px;text-align:center;margin:0 auto 50px;}
   .activities-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   .activity-card{background:var(--offwhite);border-radius:16px;padding:32px;border:2px solid transparent;transition:all .3s;}
-  .activity-card:hover{border-color:var(--bla);transform:translateY(-4px);box-shadow:0 12px 30px rgba(184,134,11,0.12);}
+  .activity-card:hover{border-color:var(--bls);transform:translateY(-4px);box-shadow:0 12px 30px rgba(74,31,140,0.1);}
   .activity-icon{font-size:2.2rem;margin-bottom:16px;}
   .activity-title{font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:10px;}
   .activity-text{color:var(--gray);font-size:.9rem;line-height:1.7;}
-  .activity-badge{display:inline-block;background:rgba(184,134,11,0.1);color:var(--bla);font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:20px;margin-top:12px;}
-  /* DONATION DRIVE */
-  .donation-section{background:var(--offwhite);}
-  .donation-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;margin-top:50px;}
-  .donation-text h3{font-size:1.6rem;font-weight:900;color:var(--text);margin-bottom:16px;}
-  .donation-text p{color:var(--gray);line-height:1.8;margin-bottom:14px;font-size:.97rem;}
-  .donation-text strong{color:var(--text);}
-  .donation-img{border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(184,134,11,0.15);}
-  .donation-img img{width:100%;height:auto;display:block;}
-  /* PRESIDENT */
-  .president-section{background:#fff;}
-  .president-card{max-width:700px;margin:40px auto 0;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 8px 40px rgba(184,134,11,0.1);border:2px solid rgba(184,134,11,0.08);}
-  .president-header{background:linear-gradient(135deg,#b8860b,#8b6508);padding:50px 40px;display:flex;align-items:center;gap:36px;}
-  .president-photo{width:160px;height:160px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,0.4);flex-shrink:0;}
-  .president-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;transform:scale(1.3);}
-  .president-info .role{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.65);font-weight:700;margin-bottom:8px;}
-  .president-info .name{font-size:2rem;font-weight:900;color:#fff;margin-bottom:8px;}
-  .president-info .school{font-size:.9rem;color:rgba(255,255,255,0.75);}
-  .president-body{padding:36px 40px;}
-  .president-quote{background:#fdf8ec;border-left:4px solid #b8860b;padding:20px 24px;border-radius:0 12px 12px 0;margin-bottom:28px;}
-  .president-quote .quote-mark{font-size:1.5rem;color:#b8860b;margin-bottom:6px;}
-  .president-quote p{font-size:1rem;color:#444;line-height:1.7;font-style:italic;}
-  .president-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .president-detail{background:var(--offwhite);border-radius:12px;padding:18px;}
-  .president-detail .label{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:#b8860b;font-weight:700;margin-bottom:8px;}
-  .president-detail p{color:var(--gray);font-size:.9rem;line-height:1.7;}
-  /* MEETINGS */
-  .meetings-section{background:linear-gradient(135deg,#b8860b 0%,#8b6508 100%);color:#fff;text-align:center;padding:80px 20px;}
+  .activity-badge{display:inline-block;background:rgba(74,31,140,0.1);color:var(--bls);font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:20px;margin-top:12px;}
+  .meetings-section{background:linear-gradient(135deg,#4a1f8c 0%,#2d1260 100%);color:#fff;text-align:center;padding:80px 20px;}
   .meetings-section .section-tag{color:rgba(255,255,255,0.7);}
   .meetings-section .section-title{color:#fff;}
   .meeting-info{display:flex;justify-content:center;gap:24px;margin-top:40px;flex-wrap:wrap;}
@@ -89,9 +61,8 @@
   .meeting-title{font-weight:800;font-size:1rem;margin-bottom:6px;}
   .meeting-detail{color:rgba(255,255,255,0.7);font-size:.9rem;}
   .meeting-detail a{color:#fff;}
-  /* GALLERY */
   .photos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px;}
-  .photo-card{border-radius:16px;overflow:hidden;aspect-ratio:1;box-shadow:0 4px 20px rgba(184,134,11,0.1);}
+  .photo-card{border-radius:16px;overflow:hidden;aspect-ratio:1;box-shadow:0 4px 20px rgba(74,31,140,0.1);}
   .photo-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
   .photo-card:hover img{transform:scale(1.05);}
   .back-btn{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-weight:700;text-decoration:none;font-size:.9rem;margin-bottom:30px;}
@@ -102,29 +73,18 @@
   .footer-logo-text span{color:#7a9fff;}
   footer p{font-size:.83rem;line-height:1.8;}
   footer a{color:#7a9fff;text-decoration:none;}
-  /* DARK MODE */
   body.dark{background:#111128;color:#e8eeff;}
   body.dark nav{background:rgba(13,13,26,0.97)!important;}
   body.dark .logo-text{color:#7a9fff;}
   body.dark .nav-links a{color:#aaa;}
   body.dark .dark-toggle{border-color:rgba(255,255,255,0.2);color:#aaa;}
   body.dark section{background:#111128;}
-  body.dark .donation-section{background:#0d0d1a;}
-  body.dark .president-section{background:#0d0d1a;}
   body.dark .section-title{color:#e8eeff;}
   body.dark .section-sub{color:#bbb;}
   body.dark .activity-card{background:#1a1a2e;}
   body.dark .activity-title{color:#e8eeff;}
   body.dark .activity-text{color:#bbb;}
-  body.dark .donation-text h3{color:#e8eeff;}
-  body.dark .donation-text p{color:#bbb;}
-  body.dark .president-card{background:#1a1a2e;}
-  body.dark .president-quote{background:#1a1a2e;border-left-color:#c9a227;}
-  body.dark .president-quote p{color:#ccc;}
-  body.dark .president-detail{background:#111128;}
-  body.dark .president-detail p{color:#bbb;}
   body.dark footer{background:#080810;}
-  /* MOBILE */
   @media(max-width:768px){
     nav{padding:12px 20px;}
     .nav-links{display:none;}
@@ -133,12 +93,8 @@
     .hero-inner{flex-direction:column;text-align:center;align-items:center;gap:30px;}
     .hero-stats{justify-content:center;}
     .activities-grid{grid-template-columns:1fr;}
-    .donation-grid{grid-template-columns:1fr;}
     .photos-grid{grid-template-columns:1fr;gap:16px;}
     .photo-card{aspect-ratio:4/3;}
-    .president-header{flex-direction:column;text-align:center;padding:30px 20px;}
-    .president-body{padding:24px 20px;}
-    .president-grid{grid-template-columns:1fr;}
     .meeting-info{flex-direction:column;align-items:center;}
     .container{padding:0 16px;}
     section{padding:50px 16px;}
@@ -174,16 +130,16 @@
 <div class="page-hero">
   <div class="hero-inner">
     <div class="hero-logo-wrap">
-      <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/bla-logo.png" alt="BLA Logo"/>
+      <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/bls-logo.png" alt="BLS Logo"/>
     </div>
     <div class="hero-content">
       <div class="chapter-badge">🎗️ Objective: Cancer Chapter</div>
-      <h1 class="page-title">Boston Latin Academy</h1>
-      <p class="page-sub">Making a real impact through donation drives, bake sales, and weekly community building at BLA.</p>
+      <h1 class="page-title">Boston Latin School</h1>
+      <p class="page-sub">Spreading cancer awareness and raising funds right here in our own school community since day one.</p>
       <div class="hero-stats">
         <div class="hero-stat"><div class="hero-stat-num">Weekly</div><div class="hero-stat-label">Chapter meetings</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">$800+</div><div class="hero-stat-label">Dollars raised</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">📦</div><div class="hero-stat-label">Donation packages</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">💰</div><div class="hero-stat-label">Money fundraisers</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label">Student led</div></div>
       </div>
     </div>
   </div>
@@ -194,75 +150,25 @@
     <a href="index.html#chapters" class="back-btn">← Back to Chapters</a>
     <div class="section-tag">What We Do</div>
     <h2 class="section-title">Chapter Activities</h2>
-    <p class="section-sub">Here's what the BLA chapter has been working on to support cancer patients and raise awareness.</p>
+    <p class="section-sub">Here's what the BLS chapter has been working on to spread cancer awareness and raise funds for our mission.</p>
     <div class="activities-grid">
       <div class="activity-card">
-        <div class="activity-icon">📦</div>
-        <div class="activity-title">Donation Drive</div>
-        <div class="activity-text">Our BLA chapter assembled care packages for cancer patients, handwriting personal gift cards for each one to remind them their community stands with them.</div>
-        <span class="activity-badge">✅ Completed</span>
-      </div>
-      <div class="activity-card">
-        <div class="activity-icon">🧁</div>
-        <div class="activity-title">Bake Sale Fundraisers</div>
-        <div class="activity-text">We raise funds through bake sales at BLA, with all proceeds going directly toward our cancer awareness mission. Sweet treats for a greater cause!</div>
+        <div class="activity-icon">💰</div>
+        <div class="activity-title">Money Fundraisers</div>
+        <div class="activity-text">Our BLS chapter raises funds to support our cancer awareness mission and help us reach more communities across Boston.</div>
         <span class="activity-badge">✅ Active Fundraiser</span>
       </div>
       <div class="activity-card">
         <div class="activity-icon">📅</div>
         <div class="activity-title">Weekly Meetings</div>
-        <div class="activity-text">Our chapter meets every week to plan upcoming events, coordinate fundraisers, and keep the mission moving forward at Boston Latin Academy.</div>
+        <div class="activity-text">Our chapter meets every week to plan campaigns, discuss cancer awareness topics, organize fundraisers, and keep the mission moving forward.</div>
         <span class="activity-badge">📍 Weekly</span>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="donation-section">
-  <div class="container">
-    <div class="section-tag">Spotlight</div>
-    <h2 class="section-title">Donation Drive Highlight</h2>
-    <p class="section-sub">Our most recent project — assembling care packages with handwritten cards for cancer patients.</p>
-    <div class="donation-grid">
-      <div class="donation-text">
-        <h3>Care Packages for Cancer Patients & Families</h3>
-        <p>Care packages are a huge part of what we do at BLA — because beyond raising awareness, we want to directly support cancer patients and their families in any way we can.</p>
-        <p>We've already completed a donation drive for the <strong>Dana-Farber/Brigham Cancer Center at South Shore Health</strong>, delivering care packages filled with personal items and handwritten gift cards from our members.</p>
-        <p>And we're not stopping there — we're currently working on our next donation drives for <strong>Hope Lodge</strong> and <strong>Beth Israel</strong>. Stay tuned! 🎗️</p>
-      </div>
-      <div class="donation-img">
-        <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/packages.png" alt="Care Packages"/>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="president-section">
-  <div class="container">
-    <div class="section-tag">Chapter Leadership</div>
-    <h2 class="section-title">Meet Our President</h2>
-    <div class="president-card">
-      <div class="president-header">
-        <div class="president-photo">
-          <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/maemae.png" alt="Maemae Chiang"/>
-        </div>
-        <div class="president-info">
-          <div class="role">Chapter President · BLA</div>
-          <div class="name">Maemae Chiang</div>
-          <div class="school">Boston Latin Academy</div>
-        </div>
-      </div>
-      <div class="president-body">
-        <div class="president-quote">
-          <div class="quote-mark">"</div>
-          <p>Being President of BLA's chapter has been fun and exciting, introducing me to new responsibilities and allowing me to make a real impact in people's lives.</p>
-        </div>
-        <div class="president-grid">
-          <div class="president-detail"><div class="label">My Passions</div><p>I love snowboarding, trying new places, playing sports, and traveling outside the US with my family!</p></div>
-          <div class="president-detail"><div class="label">What I'm Involved In</div><p>I'm on the Track & Field and Volleyball teams at BLA, and I serve as President of Objective: Cancer's BLA Chapter.</p></div>
-          <div class="president-detail"><div class="label">About Me</div><p>I'm a junior at BLA, born and raised in Boston. I love spending time with friends and exploring new spots around the city!</p></div>
-          <div class="president-detail"><div class="label">My Future Goals</div><p>In the future, I hope to pursue a career in the medical or healthcare field and continue making an impact in my community.</p></div>
-        </div>
+      <div class="activity-card">
+        <div class="activity-icon">📢</div>
+        <div class="activity-title">School Outreach</div>
+        <div class="activity-text">We spread cancer awareness throughout Boston Latin School through campaigns, social media, and conversations that educate our peers.</div>
+        <span class="activity-badge">🔄 Ongoing</span>
       </div>
     </div>
   </div>
@@ -271,11 +177,11 @@
 <div class="meetings-section">
   <div class="section-tag">Get Involved</div>
   <h2 class="section-title">Join Our Chapter</h2>
-  <p style="color:rgba(255,255,255,0.8);max-width:500px;margin:0 auto 10px;">Are you a BLA student who wants to make a difference? Come to one of our weekly meetings!</p>
+  <p style="color:rgba(255,255,255,0.8);max-width:500px;margin:0 auto 10px;">Are you a BLS student who wants to make a difference? Come to one of our weekly meetings!</p>
   <div class="meeting-info">
-    <div class="meeting-card"><div class="meeting-icon">📅</div><div class="meeting-title">Weekly Meetings</div><div class="meeting-detail">Room 102 every Thursday after school!</div></div>
-    <div class="meeting-card"><div class="meeting-icon">📸</div><div class="meeting-title">Follow Us</div><div class="meeting-detail"><a href="https://www.instagram.com/blaoc.club" target="_blank">@blaoc.club</a></div></div>
-    <div class="meeting-card"><div class="meeting-icon">📧</div><div class="meeting-title">Contact Maemae</div><div class="meeting-detail"><a href="mailto:mchiang2@bostonk12.org">mchiang2@bostonk12.org</a></div></div>
+    <div class="meeting-card"><div class="meeting-icon">📅</div><div class="meeting-title">Weekly Meetings</div><div class="meeting-detail">Every week at BLS</div></div>
+    <div class="meeting-card"><div class="meeting-icon">📸</div><div class="meeting-title">Follow Us</div><div class="meeting-detail"><a href="https://www.instagram.com/objectivecancerbls" target="_blank">@objectivecancerbls</a></div></div>
+    <div class="meeting-card"><div class="meeting-icon">📧</div><div class="meeting-title">Contact Us</div><div class="meeting-detail">objectivecancer@gmail.com</div></div>
   </div>
 </div>
 
@@ -283,11 +189,11 @@
   <div class="container">
     <div class="section-tag">Gallery</div>
     <h2 class="section-title">Chapter Photos</h2>
-    <p class="section-sub">A look at what we've been up to at BLA!</p>
+    <p class="section-sub">A look at what we've been up to at BLS!</p>
     <div class="photos-grid">
-      <div class="photo-card"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/packages.png" alt="Care Packages"/></div>
-      <div class="photo-card"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/donation-drive.png" alt="Donation Drive"/></div>
-      <div class="photo-card"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/weekly-meeting.png" alt="Weekly Meeting"/></div>
+      <div class="photo-card"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/bls1.png" alt="BLS Photo 1"/></div>
+      <div class="photo-card"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/bls2.png" alt="BLS Photo 2"/></div>
+      <div class="photo-card"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/bls3.png" alt="BLS Photo 3"/></div>
     </div>
   </div>
 </section>
