@@ -18,8 +18,8 @@
   .logo-img{width:46px;height:46px;border-radius:50%;object-fit:cover;}
   .logo-text{font-size:1rem;font-weight:900;color:var(--blue);line-height:1.2;}
   .logo-text span{display:block;font-size:.65rem;letter-spacing:2px;color:var(--accent);font-weight:600;text-transform:uppercase;text-align:center;}
-  .nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
-  .nav-links a{color:var(--gray);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .3s;}
+  .nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+  .nav-links a{color:var(--gray);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .3s;}
   .nav-links a:hover,.nav-links a.active{color:var(--blue);font-weight:700;}
   .nav-cta{background:var(--blue)!important;color:#fff!important;padding:9px 20px;border-radius:8px;font-weight:700!important;}
   .dark-toggle{background:none;border:2px solid rgba(26,63,168,0.2);border-radius:20px;padding:6px 14px;cursor:pointer;font-size:.85rem;color:var(--gray);transition:all .3s;display:flex;align-items:center;gap:6px;}
@@ -34,25 +34,34 @@
 
   /* HERO */
   #home{height:100vh;display:flex;align-items:center;background:linear-gradient(155deg,#eef2ff 0%,#fff 50%,#e8f0ff 100%);position:relative;overflow:hidden;}
-  .hero-inner{display:flex;align-items:center;justify-content:space-between;gap:60px;max-width:1100px;width:100%;margin:0 auto;padding:0 60px;padding-top:70px;}
-  .hero-content{flex:1;}
-  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--blue-light);color:var(--blue);font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;padding:7px 16px;border-radius:20px;margin-bottom:22px;font-weight:700;}
-  h1{font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:18px;}
-  h1 em{font-style:normal;color:var(--blue);}
-  .hero-sub{font-size:1rem;color:var(--gray);line-height:1.85;margin-bottom:32px;max-width:500px;}
-  .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
-  .btn{padding:13px 28px;border-radius:10px;font-size:.92rem;font-weight:700;text-decoration:none;transition:all .3s;cursor:pointer;border:none;display:inline-block;}
+  .hero-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;max-width:1100px;width:100%;margin:0 auto;padding:0 60px;padding-top:70px;}
+  .hero-content{flex:1;display:flex;flex-direction:column;gap:0;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--blue-light);color:var(--blue);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:16px;font-weight:700;width:fit-content;}
+  .hero-title{font-size:2.2rem;font-weight:900;line-height:1.15;color:var(--text);margin-bottom:14px;white-space:nowrap;}
+  .hero-title em{font-style:normal;color:var(--blue);}
+  .hero-sub{font-size:.92rem;color:var(--gray);line-height:1.7;margin-bottom:22px;max-width:460px;}
+  .hero-btns{display:flex;gap:12px;margin-bottom:12px;}
+  .btn{padding:11px 24px;border-radius:10px;font-size:.88rem;font-weight:700;text-decoration:none;transition:all .3s;cursor:pointer;border:none;display:inline-block;}
   .btn-primary{background:var(--blue);color:#fff;box-shadow:0 4px 18px rgba(26,63,168,0.28);}
   .btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);}
   .btn-outline{background:transparent;color:var(--blue);border:2px solid var(--blue);}
   .btn-outline:hover{background:var(--blue-light);transform:translateY(-2px);}
-  .chapter-cta{display:inline-flex;align-items:center;gap:10px;margin-top:16px;background:linear-gradient(135deg,#2f57d4,#1a3fa8);color:#fff;padding:14px 28px;border-radius:10px;font-size:.95rem;font-weight:800;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(47,87,212,0.5);border:2px solid rgba(255,255,255,0.3);animation:pulse 2s infinite;}
+  .chapter-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#2f57d4,#1a3fa8);color:#fff;padding:11px 22px;border-radius:10px;font-size:.86rem;font-weight:800;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(47,87,212,0.4);animation:pulse 2s infinite;width:fit-content;}
   .chapter-cta span{transition:transform .3s;}
-  .chapter-cta:hover{transform:translateY(-3px);}
+  .chapter-cta:hover{transform:translateY(-2px);}
   .chapter-cta:hover span{transform:translateX(4px);}
-  @keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(47,87,212,0.5);}50%{box-shadow:0 4px 30px rgba(47,87,212,0.8);}}
-  .hero-logo{flex-shrink:0;width:380px;height:380px;border-radius:50%;overflow:hidden;}
+  @keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(47,87,212,0.4);}50%{box-shadow:0 4px 28px rgba(47,87,212,0.7);}}
+  .hero-logo{flex-shrink:0;width:340px;height:340px;border-radius:50%;overflow:hidden;}
   .hero-logo img{width:100%;height:100%;object-fit:contain;}
+
+  /* IMPACT BAR */
+  .impact-bar{width:100%;background:#bdd4f7;padding:50px 20px;}
+  .impact-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .impact-item{text-align:center;padding:30px 20px;background:#fff;border-radius:20px;border:2px solid rgba(26,63,168,0.15);transition:all .3s;box-shadow:0 4px 16px rgba(26,63,168,0.1);}
+  .impact-item:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(26,63,168,0.18);border-color:var(--blue);}
+  .impact-icon{font-size:2rem;margin-bottom:12px;}
+  .impact-num{font-size:2.4rem;font-weight:900;color:#1a3fa8;margin-bottom:6px;}
+  .impact-label{font-size:.85rem;color:#111111;line-height:1.5;font-weight:600;}
 
   /* FACTS */
   .facts-section{background:var(--blue);padding:60px 20px;}
@@ -67,15 +76,6 @@
   .fact-source{font-size:.72rem;color:rgba(255,255,255,0.5);font-style:italic;}
   .fact-source a{color:rgba(255,255,255,0.6);text-decoration:underline;}
   .fact-source a:hover{color:#fff;}
-
-  /* IMPACT BAR */
-  .impact-bar{width:100%;background:#bdd4f7;padding:60px 20px;}
-  .impact-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-  .impact-item{text-align:center;padding:36px 20px;background:#fff;border-radius:20px;border:2px solid rgba(26,63,168,0.15);transition:all .3s;box-shadow:0 4px 16px rgba(26,63,168,0.1);}
-  .impact-item:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(26,63,168,0.18);border-color:var(--blue);}
-  .impact-icon{font-size:2rem;margin-bottom:12px;}
-  .impact-num{font-size:2.6rem;font-weight:900;color:#1a3fa8;margin-bottom:6px;}
-  .impact-label{font-size:.85rem;color:#111111;line-height:1.5;font-weight:600;}
 
   /* SECTIONS */
   section{padding:90px 20px;}
@@ -128,13 +128,13 @@
   body.dark .nav-links a{color:#aaa;}
   body.dark .dark-toggle{border-color:rgba(255,255,255,0.2);color:#aaa;}
   body.dark #home{background:linear-gradient(155deg,#0d0d1a 0%,#111128 50%,#0d0d1a 100%);}
-  body.dark h1{color:#e8eeff;}
+  body.dark .hero-title{color:#e8eeff;}
   body.dark .hero-sub{color:#aaa;}
-  body.dark .facts-section{background:#0d1535;}
   body.dark .impact-bar{background:#0d1535;}
   body.dark .impact-item{background:#1a1a2e;border-color:rgba(255,255,255,0.06);}
   body.dark .impact-num{color:#7a9fff;}
   body.dark .impact-label{color:#e8eeff;}
+  body.dark .facts-section{background:#0d1535;}
   body.dark #about{background:#111128;}
   body.dark #posts{background:#0d0d1a;}
   body.dark #chapters{background:#111128;}
@@ -151,42 +151,18 @@
   @media(max-width:768px){
     nav{padding:10px 16px;}
     .logo-img{width:42px;height:42px;}
-    .logo-text{font-size:.85rem;}
     .nav-links{display:none;}
     .hamburger{display:flex;}
-    #home{
-      height:100vh;
-      height:100svh;
-      min-height:100svh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      overflow:hidden;
-    }
-    .hero-inner{
-      flex-direction:column;
-      text-align:center;
-      align-items:center;
-      justify-content:center;
-      padding:70px 24px 16px;
-      gap:16px;
-      height:100%;
-      width:100%;
-    }
-    .hero-logo{
-      width:200px;
-      height:200px;
-      flex-shrink:0;
-    }
-    .hero-content{display:flex;flex-direction:column;align-items:center;flex:1;justify-content:center;}
-    .hero-badge{font-size:.68rem;padding:5px 12px;margin-bottom:10px;}
-    h1{font-size:1.65rem;margin-bottom:10px;line-height:1.15;}
-    .hero-sub{font-size:.85rem;margin-bottom:14px;line-height:1.6;}
-    .hero-btns{justify-content:center;gap:8px;}
-    .btn{padding:10px 20px;font-size:.85rem;}
-    .chapter-cta{font-size:.78rem;padding:10px 16px;margin-top:8px;}
-    .facts-grid{grid-template-columns:repeat(2,1fr);}
+    #home{height:100svh;display:flex;align-items:center;}
+    .hero-inner{flex-direction:column;text-align:center;align-items:center;padding:70px 20px 20px;gap:16px;}
+    .hero-content{align-items:center;}
+    .hero-badge{font-size:.65rem;}
+    .hero-title{font-size:1.7rem;white-space:normal;}
+    .hero-sub{font-size:.86rem;margin-bottom:16px;}
+    .hero-btns{justify-content:center;}
+    .hero-logo{width:180px;height:180px;}
     .impact-inner{grid-template-columns:repeat(2,1fr);}
+    .facts-grid{grid-template-columns:repeat(2,1fr);}
     .about-grid{grid-template-columns:1fr;gap:30px;}
     .about-text{text-align:center;display:flex;flex-direction:column;align-items:center;}
     .chapters-grid{grid-template-columns:1fr;gap:20px;}
@@ -227,7 +203,7 @@
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-badge">💡 Student-Led 501(c)3 Nonprofit</div>
-      <h1>Raising Awareness.<br/>Promoting <em>Proactiveness.</em></h1>
+      <h1 class="hero-title">Raising Awareness.<br/>Promoting <em>Proactiveness.</em></h1>
       <p class="hero-sub">Objective: Cancer is a student-led nonprofit focused on raising awareness for cancer in all its forms — empowering people to take action through education and outreach.</p>
       <div class="hero-btns">
         <a href="about.html" class="btn btn-primary">Our Mission</a>
@@ -243,26 +219,10 @@
 
 <div class="impact-bar">
   <div class="impact-inner">
-    <div class="impact-item">
-      <div class="impact-icon">📦</div>
-      <div class="impact-num">100+</div>
-      <div class="impact-label">Care packages donated to cancer patients</div>
-    </div>
-    <div class="impact-item">
-      <div class="impact-icon">🏫</div>
-      <div class="impact-num">2</div>
-      <div class="impact-label">Active school chapters in Boston</div>
-    </div>
-    <div class="impact-item">
-      <div class="impact-icon">📸</div>
-      <div class="impact-num">400+</div>
-      <div class="impact-label">Instagram followers & growing</div>
-    </div>
-    <div class="impact-item">
-      <div class="impact-icon">🎓</div>
-      <div class="impact-num">501(c)3</div>
-      <div class="impact-label">Registered nonprofit organization</div>
-    </div>
+    <div class="impact-item"><div class="impact-icon">📦</div><div class="impact-num">100+</div><div class="impact-label">Care packages donated to cancer patients</div></div>
+    <div class="impact-item"><div class="impact-icon">🏫</div><div class="impact-num">2</div><div class="impact-label">Active school chapters in Boston</div></div>
+    <div class="impact-item"><div class="impact-icon">📸</div><div class="impact-num">400+</div><div class="impact-label">Instagram followers & growing</div></div>
+    <div class="impact-item"><div class="impact-icon">🎓</div><div class="impact-num">501(c)3</div><div class="impact-label">Registered nonprofit organization</div></div>
   </div>
 </div>
 
@@ -293,46 +253,14 @@
     <p>Facts that drive our mission — backed by research.</p>
   </div>
   <div class="facts-grid">
-    <div class="fact-card">
-      <div class="fact-stat">1 in 2</div>
-      <div class="fact-text">Men in the US will develop cancer at some point in their lifetime.</div>
-      <div class="fact-source">Source: <a href="https://www.cancer.org/cancer/risk-prevention/understanding-cancer-risk/lifetime-probability-of-developing-or-dying-from-cancer.html" target="_blank">American Cancer Society</a></div>
-    </div>
-    <div class="fact-card">
-      <div class="fact-stat">1 in 3</div>
-      <div class="fact-text">Women in the US will develop cancer at some point in their lifetime.</div>
-      <div class="fact-source">Source: <a href="https://www.cancer.org/cancer/risk-prevention/understanding-cancer-risk/lifetime-probability-of-developing-or-dying-from-cancer.html" target="_blank">American Cancer Society</a></div>
-    </div>
-    <div class="fact-card">
-      <div class="fact-stat">20M+</div>
-      <div class="fact-text">New cancer cases are diagnosed globally each year, a number that continues to rise.</div>
-      <div class="fact-source">Source: <a href="https://www.who.int/news-room/fact-sheets/detail/cancer" target="_blank">World Health Organization</a></div>
-    </div>
-    <div class="fact-card">
-      <div class="fact-stat">30–50%</div>
-      <div class="fact-text">Of all cancer cases are preventable through lifestyle changes and early action.</div>
-      <div class="fact-source">Source: <a href="https://www.who.int/news-room/fact-sheets/detail/cancer" target="_blank">World Health Organization</a></div>
-    </div>
-    <div class="fact-card">
-      <div class="fact-stat">Up to 90%</div>
-      <div class="fact-text">Survival rate improvement is possible with early detection for many cancer types.</div>
-      <div class="fact-source">Source: <a href="https://www.cancer.org/cancer/risk-prevention/understanding-cancer-risk/early-detection.html" target="_blank">American Cancer Society</a></div>
-    </div>
-    <div class="fact-card">
-      <div class="fact-stat">#1</div>
-      <div class="fact-text">Tobacco use is the single largest preventable cause of cancer death worldwide.</div>
-      <div class="fact-source">Source: <a href="https://www.cdc.gov/tobacco/campaign/tips/diseases/cancer.html" target="_blank">CDC</a></div>
-    </div>
-    <div class="fact-card">
-      <div class="fact-stat">40%</div>
-      <div class="fact-text">Of cancer risk can be reduced by maintaining a healthy diet, exercise routine, and avoiding known carcinogens.</div>
-      <div class="fact-source">Source: <a href="https://www.wcrf.org/preventing-cancer/cancer-prevention-recommendations/" target="_blank">World Cancer Research Fund</a></div>
-    </div>
-    <div class="fact-card">
-      <div class="fact-stat">600K+</div>
-      <div class="fact-text">Americans die from cancer each year, making it the second leading cause of death in the US.</div>
-      <div class="fact-source">Source: <a href="https://www.cancer.org/research/cancer-facts-statistics/all-cancer-facts-figures.html" target="_blank">American Cancer Society</a></div>
-    </div>
+    <div class="fact-card"><div class="fact-stat">1 in 2</div><div class="fact-text">Men in the US will develop cancer at some point in their lifetime.</div><div class="fact-source">Source: <a href="https://www.cancer.org/cancer/risk-prevention/understanding-cancer-risk/lifetime-probability-of-developing-or-dying-from-cancer.html" target="_blank">American Cancer Society</a></div></div>
+    <div class="fact-card"><div class="fact-stat">1 in 3</div><div class="fact-text">Women in the US will develop cancer at some point in their lifetime.</div><div class="fact-source">Source: <a href="https://www.cancer.org/cancer/risk-prevention/understanding-cancer-risk/lifetime-probability-of-developing-or-dying-from-cancer.html" target="_blank">American Cancer Society</a></div></div>
+    <div class="fact-card"><div class="fact-stat">20M+</div><div class="fact-text">New cancer cases are diagnosed globally each year, a number that continues to rise.</div><div class="fact-source">Source: <a href="https://www.who.int/news-room/fact-sheets/detail/cancer" target="_blank">World Health Organization</a></div></div>
+    <div class="fact-card"><div class="fact-stat">30–50%</div><div class="fact-text">Of all cancer cases are preventable through lifestyle changes and early action.</div><div class="fact-source">Source: <a href="https://www.who.int/news-room/fact-sheets/detail/cancer" target="_blank">World Health Organization</a></div></div>
+    <div class="fact-card"><div class="fact-stat">Up to 90%</div><div class="fact-text">Survival rate improvement is possible with early detection for many cancer types.</div><div class="fact-source">Source: <a href="https://www.cancer.org/cancer/risk-prevention/understanding-cancer-risk/early-detection.html" target="_blank">American Cancer Society</a></div></div>
+    <div class="fact-card"><div class="fact-stat">#1</div><div class="fact-text">Tobacco use is the single largest preventable cause of cancer death worldwide.</div><div class="fact-source">Source: <a href="https://www.cdc.gov/tobacco/campaign/tips/diseases/cancer.html" target="_blank">CDC</a></div></div>
+    <div class="fact-card"><div class="fact-stat">40%</div><div class="fact-text">Of cancer risk can be reduced by maintaining a healthy diet, exercise routine, and avoiding known carcinogens.</div><div class="fact-source">Source: <a href="https://www.wcrf.org/preventing-cancer/cancer-prevention-recommendations/" target="_blank">World Cancer Research Fund</a></div></div>
+    <div class="fact-card"><div class="fact-stat">600K+</div><div class="fact-text">Americans die from cancer each year, making it the second leading cause of death in the US.</div><div class="fact-source">Source: <a href="https://www.cancer.org/research/cancer-facts-statistics/all-cancer-facts-figures.html" target="_blank">American Cancer Society</a></div></div>
   </div>
 </div>
 
@@ -395,7 +323,7 @@
   if(localStorage.getItem('dark')==='true'){document.body.classList.add('dark');document.querySelector('.dark-toggle').innerHTML='☀️ Light';}
   function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
   const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';}});},{threshold:0.08});
-  document.querySelectorAll('section,.donate-banner,.impact-bar,.ticker-wrap').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity .65s ease,transform .65s ease';obs.observe(el);});
+  document.querySelectorAll('section,.donate-banner,.impact-bar,.facts-section').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity .65s ease,transform .65s ease';obs.observe(el);});
 </script>
 </body>
 </html>
