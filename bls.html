@@ -27,7 +27,6 @@
   .mobile-menu .mob-cta{background:var(--blue);color:#fff!important;font-weight:700;text-align:center;border-radius:8px;padding:12px 16px;}
   body.dark .mobile-menu{background:#111128;}
   body.dark .mobile-menu a{color:#aaa;}
-  /* HERO */
   .page-hero{padding:120px 60px 80px;background:linear-gradient(135deg,#4a1f8c 0%,#2d1260 100%);color:#fff;position:relative;overflow:hidden;}
   .page-hero::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;background:rgba(255,255,255,0.04);border-radius:50%;}
   .hero-inner{display:flex;align-items:center;gap:60px;max-width:1100px;margin:0 auto;}
@@ -41,7 +40,6 @@
   .hero-stat{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:16px 24px;text-align:center;}
   .hero-stat-num{font-size:1.5rem;font-weight:900;color:#fff;}
   .hero-stat-label{font-size:.78rem;color:rgba(255,255,255,0.65);margin-top:4px;}
-  /* SECTIONS */
   section{padding:80px 20px;}
   .container{max-width:1100px;margin:0 auto;padding:0 20px;}
   .section-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--bls);font-weight:700;margin-bottom:10px;text-align:center;}
@@ -54,24 +52,6 @@
   .activity-title{font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:10px;}
   .activity-text{color:var(--gray);font-size:.9rem;line-height:1.7;}
   .activity-badge{display:inline-block;background:rgba(74,31,140,0.1);color:var(--bls);font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:20px;margin-top:12px;}
-  /* PRESIDENT */
-  .president-section{background:var(--offwhite);}
-  .president-card{max-width:700px;margin:40px auto 0;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 8px 40px rgba(74,31,140,0.1);border:2px solid rgba(74,31,140,0.08);}
-  .president-header{background:linear-gradient(135deg,#4a1f8c,#2d1260);padding:50px 40px;display:flex;align-items:center;gap:36px;}
-  .president-photo{width:160px;height:160px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,0.4);flex-shrink:0;}
-  .president-photo img{width:100%;height:100%;object-fit:cover;}
-  .president-info .role{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.65);font-weight:700;margin-bottom:8px;}
-  .president-info .name{font-size:2rem;font-weight:900;color:#fff;margin-bottom:8px;}
-  .president-info .school{font-size:.9rem;color:rgba(255,255,255,0.75);}
-  .president-body{padding:36px 40px;}
-  .president-quote{background:#f9f0ff;border-left:4px solid #4a1f8c;padding:20px 24px;border-radius:0 12px 12px 0;margin-bottom:28px;}
-  .president-quote .quote-mark{font-size:1.5rem;color:#4a1f8c;margin-bottom:6px;}
-  .president-quote p{font-size:1rem;color:#444;line-height:1.7;font-style:italic;}
-  .president-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .president-detail{background:var(--offwhite);border-radius:12px;padding:18px;}
-  .president-detail .label{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:#4a1f8c;font-weight:700;margin-bottom:8px;}
-  .president-detail p{color:var(--gray);font-size:.9rem;line-height:1.7;}
-  /* MEETINGS */
   .meetings-section{background:linear-gradient(135deg,#4a1f8c 0%,#2d1260 100%);color:#fff;text-align:center;padding:80px 20px;}
   .meetings-section .section-tag{color:rgba(255,255,255,0.7);}
   .meetings-section .section-title{color:#fff;}
@@ -81,7 +61,6 @@
   .meeting-title{font-weight:800;font-size:1rem;margin-bottom:6px;}
   .meeting-detail{color:rgba(255,255,255,0.7);font-size:.9rem;}
   .meeting-detail a{color:#fff;}
-  /* GALLERY */
   .photos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px;}
   .photo-card{border-radius:16px;overflow:hidden;aspect-ratio:1;box-shadow:0 4px 20px rgba(74,31,140,0.1);}
   .photo-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
@@ -94,26 +73,18 @@
   .footer-logo-text span{color:#7a9fff;}
   footer p{font-size:.83rem;line-height:1.8;}
   footer a{color:#7a9fff;text-decoration:none;}
-  /* DARK MODE */
   body.dark{background:#111128;color:#e8eeff;}
   body.dark nav{background:rgba(13,13,26,0.97)!important;}
   body.dark .logo-text{color:#7a9fff;}
   body.dark .nav-links a{color:#aaa;}
   body.dark .dark-toggle{border-color:rgba(255,255,255,0.2);color:#aaa;}
   body.dark section{background:#111128;}
-  body.dark .president-section{background:#0d0d1a;}
   body.dark .section-title{color:#e8eeff;}
   body.dark .section-sub{color:#bbb;}
   body.dark .activity-card{background:#1a1a2e;}
   body.dark .activity-title{color:#e8eeff;}
   body.dark .activity-text{color:#bbb;}
-  body.dark .president-card{background:#1a1a2e;}
-  body.dark .president-quote{background:#1a1a2e;border-left-color:#7a5fc0;}
-  body.dark .president-quote p{color:#ccc;}
-  body.dark .president-detail{background:#111128;}
-  body.dark .president-detail p{color:#bbb;}
   body.dark footer{background:#080810;}
-  /* MOBILE */
   @media(max-width:768px){
     nav{padding:12px 20px;}
     .nav-links{display:none;}
@@ -124,9 +95,6 @@
     .activities-grid{grid-template-columns:1fr;}
     .photos-grid{grid-template-columns:1fr;gap:16px;}
     .photo-card{aspect-ratio:4/3;}
-    .president-header{flex-direction:column;text-align:center;padding:30px 20px;}
-    .president-body{padding:24px 20px;}
-    .president-grid{grid-template-columns:1fr;}
     .meeting-info{flex-direction:column;align-items:center;}
     .container{padding:0 16px;}
     section{padding:50px 16px;}
@@ -206,38 +174,9 @@
   </div>
 </section>
 
-<section class="president-section">
-  <div class="container">
-    <div class="section-tag">Chapter Leadership</div>
-    <h2 class="section-title">Meet Our President</h2>
-    <div class="president-card">
-      <div class="president-header">
-        <div class="president-photo">
-          <div style="width:100%;height:100%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:3rem;">👤</div>
-        </div>
-        <div class="president-info">
-          <div class="role">Chapter President · BLS</div>
-          <div class="name">Ha Dang</div>
-          <div class="school">Boston Latin School</div>
-        </div>
-      </div>
-      <div class="president-body">
-        <div class="president-quote">
-          <div class="quote-mark">"</div>
-          <p>Add a quote from Ha Dang here.</p>
-        </div>
-        <div class="president-grid">
-          <div class="president-detail"><div class="label">Passions</div><p>Cancer awareness, community outreach, student leadership</p></div>
-          <div class="president-detail"><div class="label">Involved In</div><p>Objective: Cancer BLS Chapter, student organizations</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <div class="meetings-section">
   <div class="section-tag">Get Involved</div>
-  <h2 class="section-title" style="color:#fff;">Join Our Chapter</h2>
+  <h2 class="section-title">Join Our Chapter</h2>
   <p style="color:rgba(255,255,255,0.8);max-width:500px;margin:0 auto 10px;">Are you a BLS student who wants to make a difference? Come to one of our weekly meetings!</p>
   <div class="meeting-info">
     <div class="meeting-card"><div class="meeting-icon">📅</div><div class="meeting-title">Weekly Meetings</div><div class="meeting-detail">Every week at BLS</div></div>
