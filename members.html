@@ -28,15 +28,11 @@
   .mobile-menu .mob-cta{background:var(--blue);color:#fff!important;font-weight:700;text-align:center;border-radius:8px;padding:12px 16px;}
   body.dark .mobile-menu{background:#111128;}
   body.dark .mobile-menu a{color:#aaa;}
-
-  /* HERO */
   .page-hero{padding:140px 40px 80px;background:linear-gradient(135deg,var(--blue) 0%,var(--accent) 100%);text-align:center;color:#fff;position:relative;overflow:hidden;}
   .page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:rgba(255,255,255,0.05);border-radius:50%;}
   .page-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.75);font-weight:700;margin-bottom:12px;}
   .page-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:16px;color:#fff;}
   .page-sub{font-size:1.05rem;color:rgba(255,255,255,0.85);max-width:580px;margin:0 auto;line-height:1.8;}
-
-  /* MEMBERS */
   .members-section{padding:80px 20px;background:var(--offwhite);}
   .container{max-width:1100px;margin:0 auto;padding:0 20px;}
   .sec-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:10px;text-align:center;}
@@ -47,16 +43,15 @@
   .member-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,63,168,0.12);}
   .member-photo{width:100%;aspect-ratio:4/3;background:#eef2ff;overflow:hidden;display:flex;align-items:center;justify-content:center;}
   .member-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
-  .member-photo-placeholder{font-size:2rem;color:rgba(26,63,168,0.2);}
+  .member-photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#dce8ff;color:rgba(26,63,168,0.25);font-size:4rem;}
   .member-body{padding:22px 24px 26px;}
   .member-role{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
-  .member-name{font-size:1.15rem;font-weight:900;color:var(--text);margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(26,63,168,0.08);}
+  .member-name{font-size:1.15rem;font-weight:900;color:var(--text);margin-bottom:4px;}
+  .member-meta{font-size:.78rem;color:var(--gray);margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(26,63,168,0.08);}
   .college-label{font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:6px;}
   .college-name{font-size:.97rem;font-weight:800;color:var(--text);margin-bottom:3px;}
   .college-major{font-size:.83rem;color:var(--gray);line-height:1.5;margin-bottom:6px;}
   .college-badge{font-size:.78rem;color:var(--accent);font-weight:600;}
-
-  /* DARK MODE */
   body.dark{background:#111128;color:#e8eeff;}
   body.dark nav{background:rgba(13,13,26,0.97)!important;border-bottom-color:rgba(255,255,255,0.06);}
   body.dark .logo-text{color:#7a9fff;}
@@ -67,12 +62,10 @@
   body.dark .member-name{color:#e8eeff;}
   body.dark .sec-title{color:#e8eeff;}
   body.dark .sec-sub{color:#bbb;}
-  body.dark .college-box{background:#111128;}
   body.dark .college-name{color:#e8eeff;}
   body.dark .college-major{color:#aaa;}
-  body.dark .member-photo{background:#1a1a2e;}
+  body.dark .member-photo-placeholder{background:#111128;}
   body.dark footer{background:#080810;}
-
   footer{background:var(--text);color:rgba(255,255,255,0.45);text-align:center;padding:44px 20px;}
   .footer-logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:14px;}
   .footer-logo img{width:38px;height:38px;border-radius:50%;object-fit:cover;}
@@ -80,7 +73,6 @@
   .footer-logo-text span{color:#7a9fff;}
   footer p{font-size:.83rem;line-height:1.8;}
   footer a{color:#7a9fff;text-decoration:none;}
-
   @media(max-width:768px){
     nav{padding:12px 20px;}
     .nav-links{display:none;}
@@ -133,11 +125,13 @@
     <div class="members-grid">
 
       <div class="member-card">
-        <div class="member-photo"><div class="member-photo-placeholder">—</div></div>
+        <div class="member-photo">
+          <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/annelys.png" alt="Annelys Baez" onerror="this.parentElement.innerHTML='<div class=member-photo-placeholder>👤</div>'"/>
+        </div>
         <div class="member-body">
           <div class="member-role">Event Coordinator</div>
           <div class="member-name">Annelys Baez</div>
-          <div style="font-size:.78rem;color:var(--gray);margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(26,63,168,0.08);">BLA Chapter · Class of 2026</div>
+          <div class="member-meta">BLA Chapter · Class of 2026</div>
           <div class="college-label">College Commitment</div>
           <div class="college-name">Boston University</div>
           <div class="college-major">Major: Biochemistry & Molecular Biology</div>
@@ -146,11 +140,13 @@
       </div>
 
       <div class="member-card">
-        <div class="member-photo"><div class="member-photo-placeholder">—</div></div>
+        <div class="member-photo">
+          <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/aria.png" alt="Aria Do" onerror="this.parentElement.innerHTML='<div class=member-photo-placeholder>👤</div>'"/>
+        </div>
         <div class="member-body">
           <div class="member-role">Vice President</div>
           <div class="member-name">Aria Do</div>
-          <div style="font-size:.78rem;color:var(--gray);margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(26,63,168,0.08);">BLA Chapter · Class of 2026</div>
+          <div class="member-meta">BLA Chapter · Class of 2026</div>
           <div class="college-label">College Commitment</div>
           <div class="college-name">Northeastern University</div>
           <div class="college-major">Major: Behavioral Neuroscience</div>
@@ -158,11 +154,13 @@
       </div>
 
       <div class="member-card">
-        <div class="member-photo"><div class="member-photo-placeholder">👤</div></div>
+        <div class="member-photo">
+          <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/randy.png" alt="Randy Le" onerror="this.parentElement.innerHTML='<div class=member-photo-placeholder>👤</div>'"/>
+        </div>
         <div class="member-body">
           <div class="member-role">Treasurer</div>
           <div class="member-name">Randy Le</div>
-          <div style="font-size:.78rem;color:var(--gray);margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(26,63,168,0.08);">BLA Chapter · Class of 2026</div>
+          <div class="member-meta">BLA Chapter · Class of 2026</div>
           <div class="college-label">College Commitment</div>
           <div class="college-name">Northeastern University</div>
           <div class="college-major">Major: Business Administration: Management Information Systems</div>
