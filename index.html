@@ -13,7 +13,7 @@
   body{font-family:'Segoe UI',sans-serif;background:var(--white);color:var(--text);}
 
   /* NAV */
-  nav{position:fixed;top:0;width:100%;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:12px 60px;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,63,168,0.08);box-shadow:0 2px 20px rgba(26,63,168,0.06);}
+  nav{position:fixed;top:0;width:100%;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:12px 60px;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,63,168,0.08);box-shadow:0 2px 20px rgba(26,63,168,0.06);overflow:visible;}
   .logo-nav{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
   .logo-img{width:46px;height:46px;border-radius:50%;object-fit:cover;}
   .logo-text{font-size:1rem;font-weight:900;color:var(--blue);line-height:1.2;}
@@ -25,7 +25,8 @@
   .dark-toggle{background:none;border:2px solid rgba(26,63,168,0.2);border-radius:20px;padding:6px 14px;cursor:pointer;font-size:.85rem;color:var(--gray);transition:all .3s;display:flex;align-items:center;gap:6px;}
   /* DROPDOWN */
   .nav-links li{position:relative;}
-  .dropdown{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid rgba(26,63,168,0.1);border-radius:12px;box-shadow:0 8px 24px rgba(26,63,168,0.12);min-width:200px;padding:8px 0;z-index:1000;margin-top:8px;}
+  .nav-links li>a{padding-bottom:12px;}
+  .dropdown{display:none;position:absolute;top:calc(100%);left:0;background:#fff;border:1px solid rgba(26,63,168,0.1);border-radius:12px;box-shadow:0 8px 24px rgba(26,63,168,0.12);min-width:200px;padding:8px 0;z-index:1000;}
   .nav-links li:hover>.dropdown{display:block;}
   .dropdown a{display:block;padding:10px 18px;color:var(--text);text-decoration:none;font-size:.85rem;font-weight:500;transition:background .2s;}
   .dropdown a:hover{background:var(--blue-light);color:var(--blue);}
@@ -305,7 +306,6 @@
 
 <section id="chapters">
   <div class="container">
-    <div class="section-tag" style="text-align:center;">Our Chapters</div>
     <h2 class="section-title" style="text-align:center;">Find Us Near You</h2>
     <p class="section-sub" style="text-align:center;margin:0 auto;">Objective: Cancer has chapters at schools across Boston — spreading awareness right in our communities.</p>
     <div class="chapters-grid">
