@@ -83,6 +83,18 @@ section{padding:96px 20px;}
 .card-num{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--blue-light);margin-bottom:6px;line-height:1;}
 .card-title{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:6px;letter-spacing:.2px;}
 .card-text{color:var(--gray);line-height:1.7;font-size:.88rem;}
+/* OCOI */
+#outreach{background:var(--offwhite);border-top:1px solid rgba(26,63,168,0.08);}
+.ocoi-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.ocoi-card{background:#fff;border:1px solid rgba(26,63,168,0.1);overflow:hidden;transition:border-color .2s;}
+.ocoi-card:hover{border-color:var(--blue);}
+.ocoi-img{width:100%;aspect-ratio:4/3;overflow:hidden;}
+.ocoi-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
+.ocoi-card:hover .ocoi-img img{transform:scale(1.03);}
+.ocoi-body{padding:28px 32px 32px;}
+.ocoi-tag{font-size:.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.ocoi-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:10px;line-height:1.2;}
+.ocoi-text{color:var(--gray);font-size:.88rem;line-height:1.75;}
 .facts-section{background:var(--offwhite);padding:80px 20px;border-top:1px solid rgba(26,63,168,0.08);border-bottom:1px solid rgba(26,63,168,0.08);}
 .facts-header{margin-bottom:48px;}
 .facts-header h2{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:900;color:var(--text);margin-bottom:8px;}
@@ -98,7 +110,7 @@ section{padding:96px 20px;}
 .fact-source a{color:var(--accent);text-decoration:none;}
 .fact-source a:hover{text-decoration:underline;}
 #posts{background:#fff;}
-.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
+.posts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;}
 .post-card{border-radius:4px;overflow:hidden;aspect-ratio:1;display:block;position:relative;}
 .post-card::after{content:'';position:absolute;inset:0;background:rgba(26,63,168,0);transition:background .25s;}
 .post-card:hover::after{background:rgba(26,63,168,0.08);}
@@ -183,6 +195,7 @@ footer a:hover{color:#fff;}
   .about-grid{grid-template-columns:1fr;gap:40px;}
   .about-text{text-align:center;display:flex;flex-direction:column;align-items:center;}
   .chapters-grid{grid-template-columns:1fr;gap:16px;}
+  .ocoi-grid{grid-template-columns:1fr;}
   .posts-grid{grid-template-columns:repeat(2,1fr);}
   .container{padding:0 20px;}
   footer{padding:36px 20px;}
@@ -273,12 +286,42 @@ footer a:hover{color:#fff;}
         <div class="about-card">
           <div class="card-num">02</div>
           <div class="card-title">Outreach Initiative</div>
-          <div class="card-text">Our OCOI program connects students and community members to spread awareness and earn service hours.</div>
+          <div class="card-text">Our Outreach Initiative connects students and community members to spread awareness and earn service hours.</div>
         </div>
         <div class="about-card">
           <div class="card-num">03</div>
           <div class="card-title">Community Driven</div>
           <div class="card-text">Built by students who care, for communities that need it. Every share and conversation is part of the mission.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="outreach">
+  <div class="container">
+    <div class="section-eyebrow">Outreach Initiative</div>
+    <h2 class="section-title">Outreach Initiative in Action</h2>
+    <p class="section-sub" style="margin-bottom:56px;">Our most recent visits — delivering care packages directly to cancer patients in Boston.</p>
+    <div class="ocoi-grid">
+      <div class="ocoi-card">
+        <div class="ocoi-img">
+          <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/post8.png" alt="Hope Lodge visit"/>
+        </div>
+        <div class="ocoi-body">
+          <div class="ocoi-tag">May 2025</div>
+          <h3 class="ocoi-title">Hope Lodge Boston</h3>
+          <p class="ocoi-text">We delivered care packages to cancer patients staying at the American Cancer Society's Hope Lodge — a free housing facility for patients undergoing treatment away from home.</p>
+        </div>
+      </div>
+      <div class="ocoi-card">
+        <div class="ocoi-img">
+          <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/post7.png" alt="Beth Israel visit"/>
+        </div>
+        <div class="ocoi-body">
+          <div class="ocoi-tag">May 2025</div>
+          <h3 class="ocoi-title">Beth Israel Deaconess Medical Center</h3>
+          <p class="ocoi-text">Our team visited Beth Israel Deaconess Medical Center to hand-deliver care packages to oncology staff and patients, each with a personalized card from our members.</p>
         </div>
       </div>
     </div>
@@ -311,6 +354,8 @@ footer a:hover{color:#fff;}
     <h2 class="section-title">Recent Posts</h2>
     <p class="section-sub">Follow along as we share awareness content, cancer facts, and community stories.</p>
     <div class="posts-grid">
+      <a href="https://www.instagram.com/p/DZIrMbVnIaZ/" target="_blank" class="post-card"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/post7.png" alt="Post 7"/></a>
+      <a href="https://www.instagram.com/p/DY76fz0Dmi6/" target="_blank" class="post-card"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/post8.png" alt="Post 8"/></a>
       <a href="https://www.instagram.com/p/DACryL_xijM/" target="_blank" class="post-card"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/post1.png" alt="Post 1"/></a>
       <a href="https://www.instagram.com/p/C8z4EWsAbTO/" target="_blank" class="post-card"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/post2.png" alt="Post 2"/></a>
       <a href="https://www.instagram.com/p/C-Q7oGJgd6N/" target="_blank" class="post-card"><img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/post3.png" alt="Post 3"/></a>
