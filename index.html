@@ -91,6 +91,8 @@ section{padding:96px 20px;}
 .ocoi-img{width:100%;aspect-ratio:4/3;overflow:hidden;}
 .ocoi-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
 .ocoi-card:hover .ocoi-img img{transform:scale(1.03);}
+.ocoi-img img.rotate-fix{transform:rotate(90deg) scale(1.5);transition:transform .3s;}
+.ocoi-card:hover .ocoi-img img.rotate-fix{transform:rotate(90deg) scale(1.55);}
 .ocoi-body{padding:28px 32px 32px;}
 .ocoi-tag{font-size:.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
 .ocoi-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:10px;line-height:1.2;}
@@ -306,7 +308,7 @@ footer a:hover{color:#fff;}
     <div class="ocoi-grid">
       <div class="ocoi-card">
         <div class="ocoi-img">
-          <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/post8.png" alt="Hope Lodge visit"/>
+          <img src="https://raw.githubusercontent.com/objectivecancer/objectivecancer.github.io/main/post8.png" alt="Hope Lodge visit" class="rotate-fix"/>
         </div>
         <div class="ocoi-body">
           <div class="ocoi-tag">May 2025</div>
