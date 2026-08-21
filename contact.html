@@ -92,34 +92,6 @@ footer p{font-size:.8rem;line-height:1.9;}
 footer a{color:rgba(255,255,255,0.55);text-decoration:none;}
 footer a:hover{color:#fff;}
 
-/* DARK MODE */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media(max-width:768px){
   nav{padding:14px 20px;}
   .nav-links{display:none;}
@@ -142,6 +114,7 @@ footer a:hover{color:#fff;}
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
+    <li><a href="opportunities.html">Opportunities</a></li>
     <li>
       <a href="index.html#chapters">Chapters</a>
       <div class="dropdown">
@@ -160,6 +133,7 @@ footer a:hover{color:#fff;}
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
+  <a href="opportunities.html">Opportunities</a>
   <a href="index.html#chapters">Chapters</a>
   <a href="bls.html" class="mob-sub">Boston Latin School</a>
   <a href="bla.html" class="mob-sub">Boston Latin Academy</a>
@@ -212,14 +186,15 @@ footer a:hover{color:#fff;}
         </div>
       </div>
       <div class="form-box">
+        <form id="contactForm">
         <div class="form-row">
-          <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane"/></div>
-          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
+          <div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" required/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" required/></div>
         </div>
-        <div class="form-group"><label>Email</label><input type="email" placeholder="jane@example.com"/></div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="jane@example.com" required/></div>
         <div class="form-group">
           <label>I'm reaching out about</label>
-          <select>
+          <select name="reason">
             <option>General inquiry</option>
             <option>Starting a chapter</option>
             <option>Volunteering / OCOI</option>
@@ -229,8 +204,10 @@ footer a:hover{color:#fff;}
             <option>Other</option>
           </select>
         </div>
-        <div class="form-group"><label>Message</label><textarea placeholder="Tell us what's on your mind..."></textarea></div>
-        <button class="submit-btn" onclick="alert('Message sent! We\'ll get back to you soon.')">Send Message</button>
+        <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us what's on your mind..." required></textarea></div>
+        <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+        <p id="formStatus" style="margin-top:14px;font-size:.85rem;text-align:center;display:none;"></p>
+        </form>
       </div>
     </div>
   </div>
@@ -250,6 +227,51 @@ footer a:hover{color:#fff;}
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';}});},{threshold:0.06});
 document.querySelectorAll('section').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .6s ease,transform .6s ease';obs.observe(el);});
+
+const contactForm=document.getElementById('contactForm');
+const submitBtn=document.getElementById('submitBtn');
+const formStatus=document.getElementById('formStatus');
+
+contactForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  submitBtn.disabled=true;
+  submitBtn.textContent='Sending...';
+  formStatus.style.display='none';
+
+  const data={
+    firstName: contactForm.firstName.value,
+    lastName: contactForm.lastName.value,
+    email: contactForm.email.value,
+    reason: contactForm.reason.value,
+    message: contactForm.message.value,
+    _subject: 'New Contact Form Message - Objective: Cancer'
+  };
+
+  fetch('https://formsubmit.co/ajax/objectivecancer@gmail.com', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(() => {
+    formStatus.textContent="Message sent! We'll get back to you soon.";
+    formStatus.style.color='#1a3fa8';
+    formStatus.style.display='block';
+    contactForm.reset();
+    submitBtn.disabled=false;
+    submitBtn.textContent='Send Message';
+  })
+  .catch(() => {
+    formStatus.textContent="Something went wrong. Please email us directly at objectivecancer@gmail.com.";
+    formStatus.style.color='#c0392b';
+    formStatus.style.display='block';
+    submitBtn.disabled=false;
+    submitBtn.textContent='Send Message';
+  });
+});
 </script>
 </body>
 </html>
